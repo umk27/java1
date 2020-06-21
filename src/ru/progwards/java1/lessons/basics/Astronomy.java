@@ -13,7 +13,7 @@ public class Astronomy {
     }
 
     public static Double sphereSquare(Double r) {
-        float pi = 3.14f;
+        double pi = 3.14;
         return 4 * pi * Math.pow(r, 2);
     }
 
