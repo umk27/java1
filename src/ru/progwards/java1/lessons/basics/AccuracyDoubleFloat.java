@@ -9,8 +9,8 @@ public class AccuracyDoubleFloat {
     }
 
     public static double volumeBallDouble(double radius) {
-        double pi =3.14;
-        return 4 / 3 * pi * Math.pow(radius, 3);
+        double pi =3.14f;
+        return 4 / 3 * pi * Math.pow(radius, 3); //111
 
     }
 
