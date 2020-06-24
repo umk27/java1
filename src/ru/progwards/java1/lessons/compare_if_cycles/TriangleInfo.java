@@ -3,13 +3,13 @@ package ru.progwards.java1.lessons.compare_if_cycles;
 public class TriangleInfo {
 
     public static void main(String[] args) {
-        System.out.println(isTriangle(3,6,5));
-        System.out.println(isRightTriangle(3, 6, 5));
+        System.out.println(isTriangle(4,1,5));
+        System.out.println(isRightTriangle(4, 1, 5));
         System.out.println(isIsoscelesTriangle(3, 3, 5));
     }
 
     public static boolean isTriangle(int a, int b, int c) {
-        if (a + b > c || a + c > b || b + c > a) return true;
+        if (a + b > c && a + c > b && b + c > a) return true;
         else return false;
     }
 
