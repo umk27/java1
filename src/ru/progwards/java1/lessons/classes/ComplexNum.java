@@ -37,7 +37,7 @@ public class ComplexNum {
 
     public ComplexNum sub(ComplexNum num) {
         int x = a - num.a;
-        int y = b + num.b;
+        int y = b - num.b;
         return new ComplexNum(x, y);
     }
 
