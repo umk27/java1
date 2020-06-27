@@ -26,7 +26,7 @@ public class ComplexNum {
     }
 
     public String toString() {
-        return Integer.toString(a) + "+(" + Integer.toString(b) + "i)";
+        return Integer.toString(a) + "+" + Integer.toString(b) + "i";
     }
 
     public ComplexNum add(ComplexNum num) {

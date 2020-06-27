@@ -48,11 +48,11 @@ public class Animal {
     }
 
     public String toStringFull() {
-        return "I am <AnimalKind>, eat <FoodKind> <CalculateFoodWeight>";
+        return "I am " + getKind() + ", eat " + getFoodKind()+ " " + calculateFoodWeight();
     }
 
     @Override
     public String toString() {
-        return "I am <AnimalKind>, eat <FoodKind>";
+        return "I am " + getKind() + ", eat " + getFoodKind();
     }
 }
