@@ -5,12 +5,15 @@ import java.util.Arrays;
 public class DIntArray {
 
     public static void main(String[] args) {
-        DIntArray dIntArray1 = new DIntArray();
-        dIntArray1.atInsert(2, 10);
-        DIntArray dIntArray2 = new DIntArray();
-        dIntArray2.add(10);
-        DIntArray dIntArray3 = new DIntArray();
-        dIntArray3.atDelete(3);
+      //  DIntArray dIntArray1 = new DIntArray();
+     //   dIntArray1.atInsert(2, 10);
+      //  System.out.println(dIntArray1.at(2));
+      //  DIntArray dIntArray2 = new DIntArray();
+      //  dIntArray2.add(10);
+      //  System.out.println(dIntArray2.at(2));
+      //  DIntArray dIntArray3 = new DIntArray();
+      //  dIntArray3.atDelete(3);
+      //  System.out.println(dIntArray2.at(5));
 
     }
 

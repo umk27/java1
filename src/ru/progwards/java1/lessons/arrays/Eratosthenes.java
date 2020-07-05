@@ -31,7 +31,6 @@ public class Eratosthenes {
     }
 
     public boolean isSimple(int n) {
-        if (n<10) return true;
         return sieve[n];
     }
 
