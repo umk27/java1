@@ -17,7 +17,7 @@ public class DIntArray {
 
     }
 
-    private int[] mass = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+    private int[] mass = {};
 
 
     public void add(int num) {
