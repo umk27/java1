@@ -7,7 +7,7 @@ public class Eratosthenes {
     public static void main(String[] args) {
         Eratosthenes eratosthenes = new Eratosthenes(20);
         eratosthenes.sift();
-        System.out.println(eratosthenes.isSimple(2));
+        System.out.println(eratosthenes.isSimple(4));
         System.out.println(eratosthenes.isSimple(15));
 
     }
@@ -31,6 +31,7 @@ public class Eratosthenes {
     }
 
     public boolean isSimple(int n) {
+        if (n<10) return true;
         return sieve[n];
     }
 

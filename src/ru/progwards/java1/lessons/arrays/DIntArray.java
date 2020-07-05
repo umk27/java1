@@ -5,23 +5,17 @@ import java.util.Arrays;
 public class DIntArray {
 
     public static void main(String[] args) {
-        int[] m1 = {1, 2, 3, 4, 5};
-        int[] m2 = {9, 8, 7, 6, 5};
-        int[] m3 = {4, 5, 6, 7, 8};
-        DIntArray dIntArray1 = new DIntArray(m1);
+        DIntArray dIntArray1 = new DIntArray();
         dIntArray1.atInsert(2, 10);
-        DIntArray dIntArray2 = new DIntArray(m2);
+        DIntArray dIntArray2 = new DIntArray();
         dIntArray2.add(10);
-        DIntArray dIntArray3 = new DIntArray(m3);
+        DIntArray dIntArray3 = new DIntArray();
         dIntArray3.atDelete(3);
 
     }
 
-    private int[] mass;
+    private int[] mass = {1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-    public DIntArray(int[] mass) {
-        this.mass = mass;
-    }
 
     public void add(int num) {
         int[] mass1 = Arrays.copyOf(mass, mass.length + 1);
