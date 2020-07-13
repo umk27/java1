@@ -8,10 +8,14 @@ public class SumBits {
     }
 
     public static int sumBits(byte value) {
-        int a =0;
-        while (value != 0) {
+        int a = 0;
+        for (int i = 0; value != 0; i++) {
             a += value & 1;
-            value >>=  (byte) 1;
+            value >>= (byte) 1;
+            if (i > 8) {
+                break;
+            }
+            System.out.println(i);
         }
         return a;
     }
