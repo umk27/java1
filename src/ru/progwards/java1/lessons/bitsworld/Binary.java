@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.bitsworld;
 public class Binary {
 
     public static void main(String[] args) {
-        Binary binary = new Binary((byte) -128);
+        Binary binary = new Binary((byte) -1);
         System.out.println(binary.toString());
     }
 
@@ -17,16 +17,20 @@ public class Binary {
     public String toString() {
         int i = 0;
         String s = "";
-        int num1 = 0;
+        byte num1 = 0;
         if (num >= 0) {
             num1 = num;
         } else {
-            num1 = 128 + num;
+            num1 = (byte) (128 + num);
         }
+        System.out.println(num1);
         while (num1 != 0) {
-            s += Integer.toString(num1 % 2);
-            num1 /= 2;
+            s = Integer.toString(num1 % 2) + s;
+            System.out.println(s);
+            num1 = (byte) (num1 / (byte) 2);
+            System.out.println(num1);
             i++;
+            System.out.println(i);
         }
 
         if (num >= 0) {
