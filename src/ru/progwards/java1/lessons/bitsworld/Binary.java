@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.bitsworld;
 public class Binary {
 
     public static void main(String[] args) {
-        Binary binary = new Binary((byte) -1);
+        Binary binary = new Binary((byte) -127);
         System.out.println(binary.toString());
     }
 
@@ -62,7 +62,7 @@ public class Binary {
             }
         }
 
-        if (num < 0) {
+        else {
 
             switch (i) {
                 case 7:
