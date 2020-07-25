@@ -10,6 +10,7 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         Cow cow = new Cow(300);
         Duck duck = new Duck(5);
         Hamster hamster = new Hamster(5);
+        Animal[] animals = {cow, duck, hamster};
         System.out.println(duck.compareWeight(cow));
         System.out.println(cow.compareWeight(duck));
         System.out.println(duck.compareWeight(hamster));
@@ -18,8 +19,9 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         System.out.println(new Food((int) duck.calculateFoodWeight()).compareWeight(new Food((int) hamster.calculateFoodWeight())));
     }
 
+
     double weight;
-    public ArraySort Animal;
+    public int ArraySort;
 
     public CompareResult compareWeight(Animal smthHasWeigt) {
         if (this.weight < smthHasWeigt.weight) return CompareResult.LESS;
