@@ -1,4 +1,6 @@
-package ru.progwards.java1.lessons.classes;
+package ru.progwards.java1.lessons.interfaces;
+
+import ru.progwards.java1.lessons.interfaces.Animal;
 
 public class Cow extends Animal {
 

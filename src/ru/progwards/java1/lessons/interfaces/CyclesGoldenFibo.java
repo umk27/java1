@@ -1,21 +1,24 @@
-package ru.progwards.java1.lessons.compare_if_cycles;
+package ru.progwards.java1.lessons.interfaces;
 
 public class CyclesGoldenFibo {
 
     public static void main(String[] args) {
-        for (int i = 0; i <= 15; i++) {
-            System.out.println(fiboNumber(i));
-        }
+        lastFibo.n = 15;
+        lastFibo.fibo = 610;
+        System.out.println(fiboNumber(14));
 
-        for (int x = 1; x <= 100; x++) {
-            for (int y = 1; y <= 100; y++) {
-                for (int z = 1; z <= 100; z++) {
-                    boolean c = isGoldenTriangle(x, y, z);
-                    if (c == true) System.out.println("Сторона x= " + x + " Сторона y= " + y + " Сторона z= " + z);
-                }
-            }
-        }
+
+        //     for (int x = 1; x <= 100; x++) {
+        //         for (int y = 1; y <= 100; y++) {
+        //            for (int z = 1; z <= 100; z++) {
+        //                boolean c = isGoldenTriangle(x, y, z);
+        //                if (c == true) System.out.println("Сторона x= " + x + " Сторона y= " + y + " Сторона z= " + z);
+        //            }
+        //        }
+        //     }
     }
+
+    private static CacheInfo lastFibo;
 
     public static boolean containsDigit(int number, int digit) {
         char a;
@@ -35,6 +38,7 @@ public class CyclesGoldenFibo {
     }
 
     public static int fiboNumber(int n) {
+        if (n == lastFibo.n) return lastFibo.fibo;
         int a = 1;
         int b = 1;
         if (n == 1 || n == 2) return 1;
@@ -44,7 +48,16 @@ public class CyclesGoldenFibo {
             a = b;
             b = c;
         }
-        return c;
+        lastFibo.fibo = c;
+        return lastFibo.fibo;
+    }
+
+    public static CacheInfo getLastFibo() {
+        return lastFibo;
+    }
+
+    public static void clearLastFibo() {
+        lastFibo = null;
     }
 
     public static boolean isGoldenTriangle(int a, int b, int c) {
@@ -55,5 +68,10 @@ public class CyclesGoldenFibo {
         if (a == c) if (1.61703 < a1 / b1 && a1 / b1 < 1.61903) return true;
         if (b == c) if (1.61703 < b1 / a1 && b1 / a1 < 1.61903) return true;
         return false;
+    }
+
+    public static class CacheInfo {
+        public int n;
+        public int fibo;
     }
 }
