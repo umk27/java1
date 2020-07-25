@@ -2,9 +2,9 @@ package ru.progwards.java1.lessons.interfaces;
 
 public class CalculateFibonacci {
 
-    private static CyclesGoldenFibo.CacheInfo lastFibo;
+    private static CacheInfo lastFibo;
 
-    public int fiboNumber(int n) {
+    public static int fiboNumber(int n) {
         if (n == lastFibo.n) return lastFibo.fibo;
         int a = 1;
         int b = 1;
@@ -19,11 +19,11 @@ public class CalculateFibonacci {
         return lastFibo.fibo;
     }
 
-    public CyclesGoldenFibo.CacheInfo getLastFibo() {
+    public static CacheInfo getLastFibo() {
         return lastFibo;
     }
 
-    public void clearLastFibo() {
+    public static void clearLastFibo() {
         lastFibo = null;
     }
 
