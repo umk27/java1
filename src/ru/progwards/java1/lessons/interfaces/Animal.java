@@ -21,7 +21,6 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
 
 
     double weight;
-    public int ArraySort;
 
     public CompareResult compareWeight(Animal smthHasWeigt) {
         if (this.weight < smthHasWeigt.weight) return CompareResult.LESS;
