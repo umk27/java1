@@ -1,7 +1,5 @@
 package ru.progwards.java1.lessons.interfaces;
 
-import ru.progwards.java1.lessons.arrays.ArraySort;
-
 import java.util.Objects;
 
 public class Animal implements FoodCompare, CompareWeight<Animal> {
