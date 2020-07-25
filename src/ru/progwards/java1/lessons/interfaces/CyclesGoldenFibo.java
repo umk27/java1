@@ -3,9 +3,7 @@ package ru.progwards.java1.lessons.interfaces;
 public class CyclesGoldenFibo {
 
     public static void main(String[] args) {
-        lastFibo.n = 15;
-        lastFibo.fibo = 610;
-        System.out.println(fiboNumber(14));
+
 
 
         //     for (int x = 1; x <= 100; x++) {
@@ -37,7 +35,7 @@ public class CyclesGoldenFibo {
         return false;
     }
 
-    public static int fiboNumber(int n) {
+    public int fiboNumber(int n) {
         if (n == lastFibo.n) return lastFibo.fibo;
         int a = 1;
         int b = 1;
@@ -52,11 +50,11 @@ public class CyclesGoldenFibo {
         return lastFibo.fibo;
     }
 
-    public static CacheInfo getLastFibo() {
+    public CacheInfo getLastFibo() {
         return lastFibo;
     }
 
-    public static void clearLastFibo() {
+    public void clearLastFibo() {
         lastFibo = null;
     }
 
