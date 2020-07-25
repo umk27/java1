@@ -1,12 +1,12 @@
 package ru.progwards.java1.lessons.interfaces;
 
-public interface CompareWeight<ArraySort> {
+public interface CompareWeight<CompareWeight> {
     public enum CompareResult {
         LESS,
         EQUAL,
         GREATER
     }
 
-    public CompareResult compareWeight(ArraySort smthHasWeigt);
+    public CompareResult compareWeight(CompareWeight smthHasWeigt);
 
 }

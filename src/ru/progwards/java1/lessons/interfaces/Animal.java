@@ -1,5 +1,7 @@
 package ru.progwards.java1.lessons.interfaces;
 
+import ru.progwards.java1.lessons.arrays.ArraySort;
+
 import java.util.Objects;
 
 public class Animal implements FoodCompare, CompareWeight<Animal> {
@@ -17,6 +19,7 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
     }
 
     double weight;
+    public ArraySort Animal;
 
     public CompareResult compareWeight(Animal smthHasWeigt) {
         if (this.weight < smthHasWeigt.weight) return CompareResult.LESS;
