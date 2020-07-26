@@ -2,10 +2,15 @@ package ru.progwards.java1.lessons.interfaces;
 
 public class CalculateFibonacci {
 
+    public static void main(String[] args) {
+        System.out.println(fiboNumber(15));
+
+    }
+
     private static CacheInfo lastFibo;
 
     public static int fiboNumber(int n) {
-        if (n == lastFibo.n && n!=0) return lastFibo.fibo;
+        if (n == lastFibo.n && lastFibo.fibo!=0) return lastFibo.fibo;
         int a = 1;
         int b = 1;
         if (n == 1 || n == 2) return 1;
