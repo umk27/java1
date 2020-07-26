@@ -18,4 +18,9 @@ public class Food implements CompareWeight<Food> {
         if (this.weight > smthHasWeigt.weight) return CompareResult.GREATER;
         else return CompareResult.EQUAL;
     }
+
+    @Override
+    public void sort(Food[] a) {
+
+    }
 }
