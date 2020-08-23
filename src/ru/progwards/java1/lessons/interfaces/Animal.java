@@ -1,5 +1,6 @@
 package ru.progwards.java1.lessons.interfaces;
 
+import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -16,6 +17,7 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         System.out.println(new Food((int) cow.calculateFoodWeight()).compareWeight(new Food((int) duck.calculateFoodWeight())));
         System.out.println(new Food((int) duck.calculateFoodWeight()).compareWeight(new Food((int) cow.calculateFoodWeight())));
         System.out.println(new Food((int) duck.calculateFoodWeight()).compareWeight(new Food((int) hamster.calculateFoodWeight())));
+
     }
 
 
@@ -25,20 +27,6 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         if (this.weight < smthHasWeigt.weight) return CompareResult.LESS;
         if (this.weight > smthHasWeigt.weight) return CompareResult.GREATER;
         else return CompareResult.EQUAL;
-    }
-
-    @Override
-    public void sort(Animal[] a) {
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i].compareWeight(a[j])==CompareResult.GREATER) {
-                    Animal b = a[i];
-                    a[i] = a[j];
-                    a[j] = b;
-                }
-            }
-        }
-        System.out.println(Arrays.toString(a));
     }
 
     enum AnimalKind {
@@ -81,7 +69,10 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         return 0;
     }
 
+    @Override
+    public void sort(Animal[] a) {
 
+    }
 
     public double getFoodPrice() {
         return calculateFoodWeight() * getFood1kgPrice();

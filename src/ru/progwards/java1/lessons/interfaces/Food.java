@@ -21,6 +21,14 @@ public class Food implements CompareWeight<Food> {
 
     @Override
     public void sort(Food[] a) {
-
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i].compareWeight(a[j]) == CompareResult.GREATER) {
+                    Food b = a[i];
+                    a[i] = a[j];
+                    a[j] = b;
+                }
+            }
+        }
     }
 }

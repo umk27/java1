@@ -12,4 +12,5 @@ public interface CompareWeight<CompareWeight> {
     public CompareResult compareWeight(CompareWeight smthHasWeigt);
 
     public void sort(CompareWeight[] a);
+
 }
