@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.interfaces;
 
-public class CalculateFibonacci{
+public class CalculateFibonacci {
 
     public static void main(String[] args) {
         System.out.println(fiboNumber(15));
@@ -10,7 +10,8 @@ public class CalculateFibonacci{
     private static CacheInfo lastFibo;
 
     public static int fiboNumber(int n) {
-                int a = 1;
+        if (n == lastFibo.n) return lastFibo.fibo;
+        int a = 1;
         int b = 1;
         if (n == 1 || n == 2) return 1;
         int c = 0;
@@ -19,12 +20,13 @@ public class CalculateFibonacci{
             a = b;
             b = c;
         }
-
-       return 0;
+        lastFibo.fibo = c;
+        lastFibo.n = n;
+        return lastFibo.fibo;
     }
 
     public static CacheInfo getLastFibo() {
-                return lastFibo;
+        return lastFibo;
     }
 
     public static void clearLastFibo() {
