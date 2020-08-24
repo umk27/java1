@@ -10,7 +10,7 @@ public class CalculateFibonacci {
     private static CacheInfo lastFibo;
 
     public static int fiboNumber(int n) {
-        if (n == lastFibo.n) return lastFibo.fibo;
+       // if (n == lastFibo.n) return lastFibo.fibo;
         int a = 1;
         int b = 1;
         if (n == 1 || n == 2) return 1;
@@ -20,9 +20,10 @@ public class CalculateFibonacci {
             a = b;
             b = c;
         }
-        lastFibo.fibo = c;
-        lastFibo.n = n;
-        return lastFibo.fibo;
+       // lastFibo.fibo = c;    // Не смотря на то что компилятор не выдает ошибки, не удается обратиться к полям
+       // lastFibo.n = n;       // класса CacheInfo. Программа не считает.
+      //  return lastFibo.fibo;
+        return 0;
     }
 
     public static CacheInfo getLastFibo() {
