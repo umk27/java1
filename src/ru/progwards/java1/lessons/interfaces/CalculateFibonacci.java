@@ -10,13 +10,13 @@ public class CalculateFibonacci {
         System.out.println(getLastFibo().fibo);
         clearLastFibo();
         System.out.println(fiboNumber(15));  //при использовании метода clearLastFibo()
-                                                //обьект lastFibo становится непригоден  для сравнений в методе fiboNumber(int n)
+        //обьект lastFibo становится непригоден  для сравнений в методе fiboNumber(int n)
     }
 
     private static CacheInfo lastFibo;
 
     public static int fiboNumber(int n) {
-        if (n == lastFibo.n) return lastFibo.fibo;
+        if (lastFibo != null && n == lastFibo.n) return lastFibo.fibo;
         int a = 1;
         int b = 1;
         if (n == 1 || n == 2) return 1;
