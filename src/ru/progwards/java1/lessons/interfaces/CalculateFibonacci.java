@@ -23,7 +23,7 @@ public class CalculateFibonacci {
         if (n == 1 || n == 2) {
             lastFibo = new CalculateFibonacci.CacheInfo();
             lastFibo.fibo = 1;
-            lastFibo.n = 1;
+            lastFibo.n = n;
             return lastFibo.fibo;
         }
         int c = 0;
