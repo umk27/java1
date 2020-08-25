@@ -3,14 +3,20 @@ package ru.progwards.java1.lessons.interfaces;
 public class CalculateFibonacci {
 
     public static void main(String[] args) {
+        lastFibo = new CalculateFibonacci.CacheInfo();
+        lastFibo.fibo = 1;
+        lastFibo.n = 1;
         System.out.println(fiboNumber(15));
-
+        System.out.println(getLastFibo().fibo);
+        clearLastFibo();
+        System.out.println(fiboNumber(15));  //при использовании метода clearLastFibo()
+                                                //обьект lastFibo становится непригоден  для сравнений в методе fiboNumber(int n)
     }
 
     private static CacheInfo lastFibo;
 
     public static int fiboNumber(int n) {
-       // if (n == lastFibo.n) return lastFibo.fibo;
+        if (n == lastFibo.n) return lastFibo.fibo;
         int a = 1;
         int b = 1;
         if (n == 1 || n == 2) return 1;
@@ -20,10 +26,9 @@ public class CalculateFibonacci {
             a = b;
             b = c;
         }
-       // lastFibo.fibo = c;    // Не смотря на то что компилятор не выдает ошибки, не удается обратиться к полям
-       // lastFibo.n = n;       // класса CacheInfo. Программа не считает.
-      //  return lastFibo.fibo;
-        return 0;
+        lastFibo.fibo = c;
+        lastFibo.n = n;
+        return lastFibo.fibo;
     }
 
     public static CacheInfo getLastFibo() {
@@ -34,7 +39,7 @@ public class CalculateFibonacci {
         lastFibo = null;
     }
 
-    public static class CacheInfo<CacheInfo> {
+    public static class CacheInfo {
         public int n;
         public int fibo;
     }
