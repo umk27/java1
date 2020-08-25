@@ -4,10 +4,11 @@ public class CalculateFibonacci {
 
     public static void main(String[] args) {
         lastFibo = new CalculateFibonacci.CacheInfo();
-        lastFibo.fibo = 1;
-        lastFibo.n = 1;
-        System.out.println(fiboNumber(15));
+        lastFibo.fibo = 5;
+        lastFibo.n = 5;
+        System.out.println(fiboNumber(1));
         System.out.println(getLastFibo().fibo);
+        System.out.println(getLastFibo().n);
         clearLastFibo();
         System.out.println(fiboNumber(15));
 
@@ -19,7 +20,12 @@ public class CalculateFibonacci {
         if (lastFibo != null && n == lastFibo.n) return lastFibo.fibo;
         int a = 1;
         int b = 1;
-        if (n == 1 || n == 2) return 1;
+        if (n == 1 || n == 2) {
+            lastFibo = new CalculateFibonacci.CacheInfo();
+            lastFibo.fibo = 1;
+            lastFibo.n = 1;
+            return lastFibo.fibo;
+        }
         int c = 0;
         for (int i = 2; i != n; i++) {
             c = a + b;
