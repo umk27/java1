@@ -26,6 +26,7 @@ public class CalculateFibonacci {
             a = b;
             b = c;
         }
+        lastFibo = new CalculateFibonacci.CacheInfo();
         lastFibo.fibo = c;
         lastFibo.n = n;
         return lastFibo.fibo;
