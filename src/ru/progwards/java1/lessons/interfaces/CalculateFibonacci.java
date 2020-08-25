@@ -9,8 +9,8 @@ public class CalculateFibonacci {
         System.out.println(fiboNumber(15));
         System.out.println(getLastFibo().fibo);
         clearLastFibo();
-        System.out.println(fiboNumber(15));  //при использовании метода clearLastFibo()
-        //обьект lastFibo становится непригоден  для сравнений в методе fiboNumber(int n)
+        System.out.println(fiboNumber(15));
+
     }
 
     private static CacheInfo lastFibo;
