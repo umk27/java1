@@ -69,7 +69,6 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         return 0;
     }
 
-    @Override
     public void sort(Animal[] a) {
 
     }

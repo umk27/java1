@@ -19,7 +19,7 @@ public class Food implements CompareWeight<Food> {
         else return CompareResult.EQUAL;
     }
 
-    @Override
+
     public void sort(Food[] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {

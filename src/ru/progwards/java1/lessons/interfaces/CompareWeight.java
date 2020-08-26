@@ -3,6 +3,8 @@ package ru.progwards.java1.lessons.interfaces;
 import java.util.Arrays;
 
 public interface CompareWeight<CompareWeight> {
+
+
     public enum CompareResult {
         LESS,
         EQUAL,
@@ -11,6 +13,17 @@ public interface CompareWeight<CompareWeight> {
 
     public CompareResult compareWeight(CompareWeight smthHasWeigt);
 
-    public void sort(CompareWeight[] a);
+ //   public static void sort(CompareWeight a[]) {
+  //      for (int i = 0; i < a.length; i++) {
+   //         for (int j = i + 1; j < a.length; j++) {
+   //             if (a[i] > a[j]) {
+   //                 CompareWeight b = a[i];
+   //                 a[i] = a[j];
+   //                 a[j] = b;
+      //          }
+   //         }
+     //   }
+     //   System.out.println(Arrays.toString(a));
+  //  }
 
 }
