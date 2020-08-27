@@ -13,17 +13,17 @@ public interface CompareWeight<CompareWeight> {
 
     public CompareResult compareWeight(CompareWeight smthHasWeigt);
 
- //   public static void sort(CompareWeight a[]) {
-  //      for (int i = 0; i < a.length; i++) {
-   //         for (int j = i + 1; j < a.length; j++) {
-   //             if (a[i] > a[j]) {
-   //                 CompareWeight b = a[i];
-   //                 a[i] = a[j];
-   //                 a[j] = b;
-      //          }
-   //         }
-     //   }
-     //   System.out.println(Arrays.toString(a));
-  //  }
+    public static void sort(int[] a) {
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] > a[j]) {
+                    int b = a[i];
+                    a[i] = a[j];
+                    a[j] = b;
+                }
+            }
+        }
+        System.out.println(Arrays.toString(a));
+    }
 
 }
