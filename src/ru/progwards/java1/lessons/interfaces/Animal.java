@@ -9,7 +9,7 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         Cow cow = new Cow(300);
         Duck duck = new Duck(5);
         Hamster hamster = new Hamster(5);
-        Animal[] animals = {duck, cow, hamster, cow, duck, cow};
+
     }
 
 

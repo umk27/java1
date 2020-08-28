@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public interface CompareWeight<CompareWeight> {
 
-
     public enum CompareResult {
         LESS,
         EQUAL,

@@ -13,8 +13,8 @@ public class ArraySort implements CompareWeight<CompareWeight> {
         return null;
     }
 
-    public static void sort(CompareWeight[] a) {
-        for (int i = 0; i < a.length; i++) {
+    public static void sort(CompareWeight[] a) {                         //С интерфейсом CompareWeight он не связан,
+        for (int i = 0; i < a.length; i++) {                             //т.к. статический метод должен быть описан в самом интерфейсе
             for (int j = i + 1; j < a.length; j++) {
                 if (a[i].compareWeight(a[j]) == CompareResult.GREATER) {
                     CompareWeight b = a[i];
