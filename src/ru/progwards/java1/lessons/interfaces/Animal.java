@@ -1,6 +1,5 @@
 package ru.progwards.java1.lessons.interfaces;
 
-import java.sql.SQLOutput;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -11,7 +10,7 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         Duck duck = new Duck(5);
         Hamster hamster = new Hamster(5);
         Animal[] animals = {duck, cow, hamster, cow, duck, cow};
-        cow.sort(animals);
+
     }
 
 
@@ -65,16 +64,7 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
 
     @Override
     public void sort(Animal[] a) {
-        for (int i = 0; i < a.length; i++) {
-            for (int j = i + 1; j < a.length; j++) {
-                if (a[i].compareWeight(a[j]) == CompareResult.GREATER) {
-                    Animal b = a[i];
-                    a[i] = a[j];
-                    a[j] = b;
-                }
-            }
-        }
-        System.out.println(Arrays.toString(a));
+
     }
 
     public double getFoodPrice() {

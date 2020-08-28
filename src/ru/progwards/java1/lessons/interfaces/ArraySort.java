@@ -2,24 +2,19 @@ package ru.progwards.java1.lessons.interfaces;
 
 import java.util.Arrays;
 
-public class ArraySort implements CompareWeight<Integer> {
-
-    public static void main(String[] args) {
-        int[] a = {4, 10, 1, 7, 9, 5, 3, 8};
-
-    }
+public class ArraySort implements CompareWeight<CompareWeight> {
 
     @Override
-    public CompareResult compareWeight(Integer smthHasWeigt) {
+    public CompareResult compareWeight(CompareWeight smthHasWeigt) {
         return null;
     }
 
     @Override
-    public void sort(Integer[] a) {
+    public void sort(CompareWeight[] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {
-                if (a[i] > a[j]) {
-                    int b = a[i];
+                if (a[i].compareWeight(a[j]) == CompareResult.GREATER) {
+                    CompareWeight b = a[i];
                     a[i] = a[j];
                     a[j] = b;
                 }
