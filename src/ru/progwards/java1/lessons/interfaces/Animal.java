@@ -10,7 +10,6 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
         Duck duck = new Duck(5);
         Hamster hamster = new Hamster(5);
         Animal[] animals = {duck, cow, hamster, cow, duck, cow};
-
     }
 
 
@@ -60,11 +59,6 @@ public class Animal implements FoodCompare, CompareWeight<Animal> {
                 return 50;
         }
         return 0;
-    }
-
-    @Override
-    public void sort(Animal[] a) {
-
     }
 
     public double getFoodPrice() {
