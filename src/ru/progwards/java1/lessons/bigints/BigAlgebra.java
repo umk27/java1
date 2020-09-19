@@ -5,17 +5,17 @@ import java.math.BigInteger;
 
 public class BigAlgebra {
     public static void main(String[] args) {
-        BigAlgebra bigAlgebra = new BigAlgebra();
-        BigDecimal num = new BigDecimal(2);
-        BigInteger num1 = new BigInteger(String.valueOf(4));
-        System.out.println(bigAlgebra.fastPow(num, 7));
-        System.out.println(bigAlgebra.fibonacci(6));
+      //  BigAlgebra bigAlgebra = new BigAlgebra();
+      //  BigDecimal num = new BigDecimal(2);
+      //  BigInteger num1 = new BigInteger(String.valueOf(4));
+     //   System.out.println(bigAlgebra.fastPow(num, 7));
+     //   System.out.println(bigAlgebra.fibonacci(6));
 
 
     }
 
 
-    BigDecimal fastPow(BigDecimal num, int pow) {
+  static  BigDecimal fastPow(BigDecimal num, int pow) {
         byte a;
         BigDecimal s = new BigDecimal(1);
         BigDecimal z = num;
@@ -32,7 +32,7 @@ public class BigAlgebra {
 
     }
 
-    BigInteger fibonacci(int n) {
+  static BigInteger fibonacci(int n) {
         int a = 1;
         int b = 1;
         if (n == 1 || n == 2) {
