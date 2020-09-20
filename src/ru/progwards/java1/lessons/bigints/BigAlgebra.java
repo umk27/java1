@@ -5,11 +5,7 @@ import java.math.BigInteger;
 
 public class BigAlgebra {
     public static void main(String[] args) {
-      //  BigAlgebra bigAlgebra = new BigAlgebra();
-      //  BigDecimal num = new BigDecimal(2);
-      //  BigInteger num1 = new BigInteger(String.valueOf(4));
-     //   System.out.println(bigAlgebra.fastPow(num, 7));
-     //   System.out.println(bigAlgebra.fibonacci(6));
+        System.out.println(fibonacci(48));
 
 
     }
@@ -33,17 +29,17 @@ public class BigAlgebra {
     }
 
   static BigInteger fibonacci(int n) {
-        int a = 1;
-        int b = 1;
+        BigInteger a = new BigInteger("1");
+        BigInteger b = new BigInteger("1");
         if (n == 1 || n == 2) {
             return BigInteger.ONE;
         }
-        int c = 0;
+        BigInteger c =new BigInteger("1");
         for (int i = 2; i != n; i++) {
-            c = a + b;
+            c = a.add(b);
             a = b;
             b = c;
         }
-        return new BigInteger(String.valueOf(c));
+        return c;
     }
 }
