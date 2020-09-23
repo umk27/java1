@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.bigints;
 
-public class IntInteger implements Add<Integer> {
+public class IntInteger extends AbsInteger {
 
     int num;
 
@@ -10,6 +10,6 @@ public class IntInteger implements Add<Integer> {
 
     @Override
     public int toInt() {
-        return 0;
+        return num;
     }
 }

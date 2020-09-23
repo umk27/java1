@@ -1,6 +1,13 @@
 package ru.progwards.java1.lessons.bigints;
 
-public class ByteInteger implements Add<Byte> {
+public class ByteInteger extends AbsInteger {
+
+    public static void main(String[] args) {
+        AbsInteger b1 = new ByteInteger((byte) 5);
+        AbsInteger b2 = new ByteInteger((byte) 3);
+        ByteInteger b3 = (ByteInteger) add(b1, b2);
+        System.out.println(b3.num);
+    }
 
     byte num;
 
@@ -10,6 +17,6 @@ public class ByteInteger implements Add<Byte> {
 
     @Override
     public int toInt() {
-        return 0;
+        return num;
     }
 }

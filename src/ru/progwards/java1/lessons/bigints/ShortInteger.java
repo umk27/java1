@@ -1,11 +1,6 @@
 package ru.progwards.java1.lessons.bigints;
 
-public class ShortInteger implements Add<Short> {
-
-    public static void main(String[] args) {
-
-
-    }
+public class ShortInteger extends AbsInteger{
 
     short num;
 
@@ -15,7 +10,7 @@ public class ShortInteger implements Add<Short> {
 
     @Override
     public int toInt() {
-        return 0;
+        return num;
     }
 
 
