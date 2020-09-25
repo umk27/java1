@@ -13,5 +13,8 @@ public class ShortInteger extends AbsInteger{
         return num;
     }
 
-
+    @Override
+    public String toString() {
+        return String.valueOf(num);
+    }
 }

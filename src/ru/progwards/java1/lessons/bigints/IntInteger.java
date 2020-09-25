@@ -12,4 +12,9 @@ public class IntInteger extends AbsInteger {
     public int toInt() {
         return num;
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(num);
+    }
 }

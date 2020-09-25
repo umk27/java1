@@ -6,7 +6,7 @@ public class ByteInteger extends AbsInteger {
         AbsInteger b1 = new ByteInteger((byte) 5);
         AbsInteger b2 = new ByteInteger((byte) 3);
         ByteInteger b3 = (ByteInteger) add(b1, b2);
-        System.out.println(b3.num);
+        System.out.println(b3.toString());
     }
 
     byte num;
@@ -18,5 +18,10 @@ public class ByteInteger extends AbsInteger {
     @Override
     public int toInt() {
         return num;
+    }
+
+    @Override
+    public String toString() {
+        return String.valueOf(num);
     }
 }
