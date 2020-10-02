@@ -25,8 +25,7 @@ public class CharFilter {
                     z1 = z1.replaceAll(b, "");
                 }
                 z = z + z1 + "\n";
-                System.out.println(z);
-            }
+                           }
             reader.close();
         } catch (IOException e) {
             System.out.println(-1);
