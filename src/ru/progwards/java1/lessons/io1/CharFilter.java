@@ -22,7 +22,7 @@ public class CharFilter {
                 z1 = scanner.nextLine();
                 for (int i = 0; i < f.length; i++) {
                     String b = String.valueOf(f[i]);
-                    z1 = z1.replaceAll(b, "");
+                    z1 = z1.replace(b, "");
                 }
                 z = z + z1 + "\n";
                            }
