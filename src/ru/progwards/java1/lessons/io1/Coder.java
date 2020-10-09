@@ -16,12 +16,17 @@ public class Coder {
     }
 
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
+        boolean first = true;
         int q = 0;
         String z = "";
         try {
             FileReader reader = new FileReader(inFileName);
             Scanner scanner = new Scanner(reader);
             while (scanner.hasNextLine()) {
+                if (!first) {
+                    z = z + "\n";
+                }
+                first = false;
                 String a = scanner.nextLine();
                 char[] oldcode = a.toCharArray();
                 char[] code1 = new char[oldcode.length];
@@ -32,7 +37,7 @@ public class Coder {
 
                 }
                 String z1 = new String(code1);
-                z = z + z1 + "\n";
+                z = z + z1;
             }
             reader.close();
         } catch (Exception e) {
