@@ -5,6 +5,7 @@ import org.w3c.dom.ls.LSOutput;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Coder {
@@ -15,7 +16,6 @@ public class Coder {
     }
 
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
-        int i = 0;
         int q = 0;
         String z = "";
         try {
@@ -25,10 +25,12 @@ public class Coder {
                 String a = scanner.nextLine();
                 char[] oldcode = a.toCharArray();
                 char[] code1 = new char[oldcode.length];
-                for (i = 0; i < oldcode.length; i++) {
-                    code1[i] = code[i + q];
+                for (int i = 0; i < oldcode.length; i++) {
+                    String w = String.valueOf(oldcode[i]);
+                    System.out.println(w);
+                    code1[i] = code[Integer.parseInt(w)];
+
                 }
-                q = q + oldcode.length;
                 String z1 = new String(code1);
                 z = z + z1 + "\n";
             }
