@@ -11,7 +11,7 @@ public class Coder {
 
     public static void main(String[] args) {
         char[] code = {'9', '8', '7', '6', '5', '4', '3', '2'};
-        codeFile("t1.txt", "???.txt", code, "t3.txt");
+        codeFile("t1.txt", "t2.txt", code, "t3.txt");
     }
 
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
