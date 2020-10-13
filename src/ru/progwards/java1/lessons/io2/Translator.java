@@ -42,7 +42,7 @@ public class Translator {
                 if (z1[i].equals(inLang[j])) {
                     z[i] = outLang[j];
                 }
-                if (z1[i].toLowerCase().equals(inLang[j])) {
+                else if (z1[i].toLowerCase().equals(inLang[j])) {
                     char[] r = outLang[j].toCharArray();
                     String t = String.valueOf(r[0]);
                     String t1 = String.valueOf(r[0]).toUpperCase();
