@@ -34,6 +34,7 @@ public class Creator {
             collection.add(i);
             collection.add(a);
             collection.add(b);
+            i = i + 3;
 
         }
         return collection;
