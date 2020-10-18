@@ -96,7 +96,7 @@ public class Finder {
             }
             s = names1.get(i);
             z.add(a);
-            s = s + ":" + (a - 1);
+            s = s + ":" + a;
             names2.add(s);
             a = 1;
             s = "";
