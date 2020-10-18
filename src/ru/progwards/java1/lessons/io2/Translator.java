@@ -8,7 +8,7 @@ public class Translator {
         String[] out = {"Привет", "Мир"};
         String[] in = {"Hello", "World"};
         Translator translator = new Translator(in, out);
-        System.out.println(translator.translate("Hello World!"));
+        System.out.println(translator.translate("Hello world!"));
 
     }
 
@@ -58,4 +58,6 @@ public class Translator {
 
         return sentence;
     }
+
+
 }
