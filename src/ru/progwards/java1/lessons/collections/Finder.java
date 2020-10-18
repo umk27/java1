@@ -20,7 +20,7 @@ public class Finder {
         numbers.add(9);
         numbers.add(10);
         numbers.add(11);
-     //   System.out.println(findSequence(numbers));
+        //   System.out.println(findSequence(numbers));
         Collection<String> names = new ArrayList();
         names.add("Григорий");
         names.add("Борис");
@@ -28,7 +28,7 @@ public class Finder {
         names.add("Василий");
         names.add("Григорий");
         names.add("Борис");
-       System.out.println(findSimilar(names));
+        System.out.println(findSimilar(names));
 
     }
 
@@ -89,14 +89,14 @@ public class Finder {
         ArrayList<String> names2 = new ArrayList();
         ArrayList<Integer> z = new ArrayList();
         for (int i = 0; i < names1.size() - 1; i++) {
-            s = names1.get(i);
             for (int j = i + 1; j < names1.size(); j++) {
                 if (names1.get(i).equals(names1.get(j))) {
                     a = a + 1;
                 }
             }
+            s = names1.get(i);
             z.add(a);
-            s = s + ":" + a;
+            s = s + ":" + (a - 1);
             names2.add(s);
             a = 1;
             s = "";
