@@ -9,22 +9,26 @@ public class Finder {
 
     public static void main(String[] args) {
         Collection<Integer> numbers = new ArrayList();
-        numbers.add(2);
-        numbers.add(5);
-        numbers.add(0);
-        numbers.add(3);
-        numbers.add(6);
         numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
         numbers.add(4);
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+        numbers.add(9);
+        numbers.add(10);
+        numbers.add(11);
+        System.out.println(findSequence(numbers));
         Collection<String> names = new ArrayList();
-        names.add("Василий");
-        names.add("Василий");
-        names.add("Василий");
-        names.add("Павел");
-        names.add("Сергей");
-        names.add("Павел");
-        names.add("Игорь");
-        System.out.println(findSimilar(names));
+        names.add("Григорий");
+        names.add("Борис");
+        names.add("Борис");
+        names.add("Дмитрий");
+        names.add("Дмитрий");
+        names.add("Александр");
+       // System.out.println(findSimilar(names));
 
     }
 
@@ -62,7 +66,7 @@ public class Finder {
         boolean b = false;
         ArrayList<Integer> numbers1 = (ArrayList<Integer>) numbers;
         Collection<Integer> collection = new ArrayList();
-        for (int i = 0; i < numbers1.size(); i++) {
+        for (int i = 1; i < numbers1.size(); i++) {
             for (int j = 0; j < numbers1.size(); j++) {
                 if (numbers1.get(j) == i) {
                     b = true;
@@ -80,6 +84,7 @@ public class Finder {
         String s = "";
         int a = 1;
         int b = 0;
+        int w = 0;
         ArrayList<String> names1 = (ArrayList<String>) names;
         ArrayList<String> names2 = new ArrayList();
         ArrayList<Integer> z = new ArrayList();
@@ -96,9 +101,11 @@ public class Finder {
             a = 1;
             s = "";
         }
-        for (int i = 0; i < z.size() - 1; i++) {
-            if (z.get(i + 1) > z.get(i)) {
-                b = i + 1;
+        w = z.get(0);
+        for (int i = 1; i < z.size() - 1; i++) {
+            if (z.get(i) > w) {
+                b = i;
+                w = z.get(i);
             }
         }
         return names2.get(b);
