@@ -9,18 +9,18 @@ public class Finder {
 
     public static void main(String[] args) {
         Collection<Integer> numbers = new ArrayList();
-        numbers.add(1);
-        numbers.add(2);
-        numbers.add(3);
-        numbers.add(4);
-        numbers.add(5);
-        numbers.add(6);
-        numbers.add(7);
-        numbers.add(8);
-        numbers.add(9);
+        numbers.add(95);
+        numbers.add(-96);
+        numbers.add(-61);
+        numbers.add(72);
+        numbers.add(77);
+        numbers.add(27);
+        numbers.add(25);
+        numbers.add(-88);
+        numbers.add(67);
         numbers.add(10);
         numbers.add(11);
-        //   System.out.println(findSequence(numbers));
+        System.out.println(findMinSumPair(numbers));
         Collection<String> names = new ArrayList();
         names.add("Григорий");
         names.add("Борис");
@@ -28,7 +28,7 @@ public class Finder {
         names.add("Василий");
         names.add("Григорий");
         names.add("Борис");
-        System.out.println(findSimilar(names));
+      //  System.out.println(findSimilar(names));
 
     }
 
@@ -38,7 +38,7 @@ public class Finder {
         int a = numbers1.get(0) + numbers1.get(1);
         int i1 = 0;
         int i2 = 1;
-        for (int i = 2; i < numbers1.size() - 1; i++) {
+        for (int i = 0; i < numbers1.size() - 1; i++) {
             int b = numbers1.get(i) + numbers1.get(i + 1);
             if (b < a) {
                 a = b;
