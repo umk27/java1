@@ -20,15 +20,15 @@ public class Finder {
         numbers.add(9);
         numbers.add(10);
         numbers.add(11);
-        System.out.println(findSequence(numbers));
+     //   System.out.println(findSequence(numbers));
         Collection<String> names = new ArrayList();
         names.add("Григорий");
         names.add("Борис");
-        names.add("Борис");
-        names.add("Дмитрий");
-        names.add("Дмитрий");
         names.add("Александр");
-       // System.out.println(findSimilar(names));
+        names.add("Василий");
+        names.add("Григорий");
+        names.add("Борис");
+       System.out.println(findSimilar(names));
 
     }
 

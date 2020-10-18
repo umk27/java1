@@ -28,13 +28,13 @@ public class Creator {
 
     public static Collection<Integer> fill3(int n) {
         Collection<Integer> collection = new LinkedList();
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i < n*3; i++) {
             int a = i * i;
             int b = i * i * i;
             collection.add(i);
             collection.add(a);
             collection.add(b);
-            i = i + 3;
+            i = i + 2;
 
         }
         return collection;
