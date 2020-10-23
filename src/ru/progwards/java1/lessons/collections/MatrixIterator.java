@@ -2,23 +2,25 @@ package ru.progwards.java1.lessons.collections;
 
 import java.util.Iterator;
 
-public class ArrayIterator<T> implements Iterator<T> {
+public class MatrixIterator<T> implements Iterator<T> {
 
-    private T[] array;
+    private T[][] array;
 
-    ArrayIterator(T[] array) {
+    MatrixIterator(T[][] array) {
         this.array = array;
     }
 
     @Override
     public boolean hasNext() {
-
+        
         return false;
     }
 
     @Override
     public T next() {
-        // TODO Auto-generated method stub
+
         return null;
     }
+
+
 }

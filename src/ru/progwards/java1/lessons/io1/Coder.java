@@ -6,23 +6,30 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
 public class Coder {
 
     public static void main(String[] args) {
-        char ch10 = (char) 10;
-        char ch13 = (char) 13;
-        System.out.println(ch10);
-        System.out.println(ch13);
-       // char[] code = {'9', '8', '7', '6', '5', '4', '3', '2', '1', '0'};
-       // codeFile("t1.txt", "t2.txt", code, "t3.txt");
+        byte b = 13;
+        char c = (char) b;
+        System.out.println("char c="+c);
+        int i = Integer.valueOf(c);
+        System.out.println("int i="+i);
+        String s = String.valueOf(c);
+        System.out.println("String s="+s);
+        int ii = Integer.parseInt(s);
+        System.out.println("int ii="+ii);
+     //   char[] code = {'9', '8', '7', '6', '5', '4', '3', '2', '1', '0'};
+     //   codeFile("t1.txt", "t2.txt", code, "t3.txt");
     }
 
     public static void codeFile(String inFileName, String outFileName, char[] code, String logName) {
         boolean first = true;
-        int q = 0;
         String z = "";
         try {
             FileInputStream bytefile = new FileInputStream(inFileName);
@@ -30,15 +37,23 @@ public class Coder {
             System.out.println(Arrays.toString(b));
             char[] c = new char[b.length];
             char[] code1 = new char[b.length];
-            for (int i = 0; i < b.length; i++) {
+            for (int i = 0; i < b.length - 2; i++) {
                 if (i != 4 && i != 5) {
                     c[i] = (char) b[i];
-                    System.out.println(Arrays.toString(c));  // Как преобразовать в char символ перехода на следующую строку в байтах?
+                    //System.out.println(c[i]);
+                    Double d = Double.valueOf(c[i]);
+                    System.out.println(d);
+                    BigDecimal bd = new BigDecimal(c[i]);
+                    BigInteger bi = bd.toBigInteger();
+                    Integer q = bi.intValue();
                     String w = String.valueOf(c[i]);
-                    code1[i] = code[Integer.valueOf(w)];
+                    //System.out.println(w);
+                    // code1[i] = code[c[i]];
+                 //   System.out.println(code[i]);
                 }
             }
             z = new String(code1);
+            System.out.println(z);
             bytefile.close();
         } catch (
                 Exception e) {
