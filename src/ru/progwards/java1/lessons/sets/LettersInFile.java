@@ -38,6 +38,8 @@ public class LettersInFile {
             абв.add((char) i);
             АБВ.add(Character.toUpperCase((char) i));
         }
+        абв.add('ё');
+        АБВ.add('Ё');
 
         try (FileReader reader = new FileReader(fileName)) {
             Scanner scanner = new Scanner(reader);
@@ -51,7 +53,7 @@ public class LettersInFile {
 
             }
         } catch (IOException e) {
-          return e.getMessage();
+            return e.getMessage();
         }
 
         for (int i = 0; i < r.size(); i++) {
