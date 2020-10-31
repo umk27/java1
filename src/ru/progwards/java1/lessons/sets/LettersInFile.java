@@ -55,13 +55,13 @@ public class LettersInFile {
         }
 
         for (int i = 0; i < r.size(); i++) {
-            if (ABC.contains(r.get(i))) {
+            if (ABC.contains(r.get(i)) && !s.contains(r.get(i))) {
                 s.add(r.get(i));
-            } else if (abc.contains(r.get(i))) {
+            } else if (abc.contains(r.get(i)) && !z.contains(r.get(i))) {
                 z.add(r.get(i));
-            } else if (АБВ.contains(r.get(i))) {
+            } else if (АБВ.contains(r.get(i)) && !x.contains(r.get(i))) {
                 x.add(r.get(i));
-            } else if (абв.contains(r.get(i))) {
+            } else if (абв.contains(r.get(i)) && !v.contains(r.get(i))) {
                 v.add(r.get(i));
             }
 
