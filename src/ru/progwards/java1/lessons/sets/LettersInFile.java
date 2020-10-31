@@ -3,13 +3,14 @@ package ru.progwards.java1.lessons.sets;
 import org.w3c.dom.ls.LSOutput;
 
 import java.io.FileReader;
+import java.io.IOException;
 import java.io.Reader;
 import java.util.*;
 
 public class LettersInFile {
 
     public static void main(String[] args) {
-        System.out.println(process("t10.txt"));
+        System.out.println(process("null"));
 
     }
 
@@ -39,7 +40,6 @@ public class LettersInFile {
         }
 
         try (FileReader reader = new FileReader(fileName)) {
-            ;
             Scanner scanner = new Scanner(reader);
             while (scanner.hasNextLine()) {
                 char[] c = scanner.nextLine().toCharArray();
@@ -50,8 +50,8 @@ public class LettersInFile {
                 }
 
             }
-        } catch (Exception e) {
-            e.getMessage();
+        } catch (IOException e) {
+          return e.getMessage();
         }
 
         for (int i = 0; i < r.size(); i++) {
