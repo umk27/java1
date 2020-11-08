@@ -11,7 +11,7 @@ public class Calculate {
 
     public static double calculation1() {
         StackCalc stackCalc = new StackCalc();
-        stackCalc.push( 3);
+        stackCalc.push(3);
         stackCalc.push(12.1);
         stackCalc.add();
         stackCalc.push(2.2);
@@ -21,9 +21,9 @@ public class Calculate {
 
     public static double calculation2() {
         StackCalc stackCalc = new StackCalc();
-        stackCalc.push(9.2);
         stackCalc.push(13.001);
-        stackCalc.add();
+        stackCalc.push(9.2);
+        stackCalc.sub();
         stackCalc.push(2);
         stackCalc.mul();
         stackCalc.push(87);
