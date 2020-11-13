@@ -26,7 +26,7 @@ public class CollectionsSort {
                 }
             }
         }
-        data = Arrays.asList(a);
+        data.addAll(Arrays.asList(a));
       //  System.out.println(data);
     }
 
@@ -43,23 +43,26 @@ public class CollectionsSort {
     }
 
     static void collSort(Collection<Integer> data) {
-        Collections.sort((ArrayList<Integer>) data);
+        try {
+            Collections.sort((ArrayList<Integer>) data);
+        } catch (NullPointerException e) {
 
+        }
     }
 
     public static Collection<String> compareSort() {
         long start = System.nanoTime();
         collSort(data);
         long a1 = System.nanoTime() - start;
-      //  System.out.println(a1);
+        //  System.out.println(a1);
         start = System.nanoTime();
         minSort(data);
         long a2 = System.nanoTime() - start;
-     //   System.out.println(a2);
+        //   System.out.println(a2);
         start = System.nanoTime();
         mySort(data);
         long a3 = System.nanoTime() - start;
-     //   System.out.println(a3);
+        //   System.out.println(a3);
         Collection<String> result = new ArrayList<>();
 
         if (a3 < a2 && a3 < a1) {
