@@ -26,19 +26,24 @@ public class CollectionsSort {
                 }
             }
         }
+        data.clear();
         data.addAll(Arrays.asList(a));
       //  System.out.println(data);
     }
 
     public static void minSort(Collection<Integer> data) {
-        Collection<Integer> data1 = new ArrayList<>(data.size());
-        int s = data.size();
-        while (!data.isEmpty()) {
-            int a = Collections.min(data);
-            data.remove(a);
-            data1.add(a);
+        try {
+            Collection<Integer> data1 = new ArrayList<>(data.size());
+            int s = data.size();
+            while (!data.isEmpty()) {
+                int a = Collections.min(data);
+                data.remove(a);
+                data1.add(a);
+            }
+            data.addAll(data1);
+        } catch (NullPointerException e) {
+
         }
-        data.addAll(data1);
 
     }
 
