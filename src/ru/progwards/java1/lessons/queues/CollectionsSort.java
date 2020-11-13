@@ -56,16 +56,22 @@ public class CollectionsSort {
     }
 
     public static Collection<String> compareSort() {
+        ArrayList<Integer> data1= new ArrayList<>();
+        ArrayList<Integer> data2= new ArrayList<>();
+        ArrayList<Integer> data3= new ArrayList<>();
+        data1.addAll(data);
+        data2.addAll(data);
+        data3.addAll(data);
         long start = System.nanoTime();
-        collSort(data);
+        collSort(data1);
         long a1 = System.nanoTime() - start;
         //  System.out.println(a1);
         start = System.nanoTime();
-        minSort(data);
+        minSort(data2);
         long a2 = System.nanoTime() - start;
         //   System.out.println(a2);
         start = System.nanoTime();
-        mySort(data);
+        mySort(data3);
         long a3 = System.nanoTime() - start;
         //   System.out.println(a3);
         Collection<String> result = new ArrayList<>();
