@@ -15,32 +15,30 @@ public class CollectionsSort {
     }
 
     public static void mySort(Collection<Integer> data) {
-        ArrayList<Integer> data1 = (ArrayList<Integer>) data;
-        int b = 0;
-        for (int i = 0; i < data.size(); i++) {
-            for (int j = i + 1; j < data.size(); j++) {
-                if (data1.get(i) > data1.get(j)) {
-                    b = data1.get(i);
-                    data1.add(i, data1.get(j));
-                    data1.remove(i + 1);
-                    data1.add(j, b);
-                    data1.remove(j + 1);
+        Integer[] a = new Integer[data.size()];
+        data.toArray(a);
+        for (int i = 0; i < a.length; i++) {
+            for (int j = i + 1; j < a.length; j++) {
+                if (a[i] > a[j]) {
+                    int b = a[i];
+                    a[i] = a[j];
+                    a[j] = b;
                 }
             }
         }
-
+        data = new ArrayList<>(Arrays.asList(a));
+       
     }
 
     public static void minSort(Collection<Integer> data) {
         Collection<Integer> data1 = new ArrayList<>(data.size());
         int s = data.size();
-        for (int i = 0; i < s; i++) {
+        while (!data.isEmpty()) {
             int a = Collections.min(data);
             data.remove(a);
-            data.add(2147483647);
             data1.add(a);
         }
-        Collections.copy((ArrayList<Integer>) data, (ArrayList<Integer>) data1);
+        data.addAll(data1);
 
     }
 
