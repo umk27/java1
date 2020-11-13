@@ -28,7 +28,7 @@ public class CollectionsSort {
         }
         data.clear();
         data.addAll(Arrays.asList(a));
-      //  System.out.println(data);
+        //  System.out.println(data);
     }
 
     public static void minSort(Collection<Integer> data) {
@@ -56,12 +56,15 @@ public class CollectionsSort {
     }
 
     public static Collection<String> compareSort() {
-        ArrayList<Integer> data1= new ArrayList<>();
-        ArrayList<Integer> data2= new ArrayList<>();
-        ArrayList<Integer> data3= new ArrayList<>();
-        data1.addAll(data);
-        data2.addAll(data);
-        data3.addAll(data);
+        Collection<Integer> data1 = data;
+        Collection<Integer> data2 = data;
+        Collection<Integer> data3 = data;
+        Collections.copy((List) data1, (List) data);
+        Collections.copy((List) data2, (List) data);
+        Collections.copy((List) data3, (List) data);
+        // data1.addAll(data);
+        // data2.addAll(data);
+        // data3.addAll(data);
         long start = System.nanoTime();
         collSort(data1);
         long a1 = System.nanoTime() - start;
