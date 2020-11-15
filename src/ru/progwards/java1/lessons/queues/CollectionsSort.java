@@ -5,7 +5,7 @@ import java.util.*;
 
 public class CollectionsSort {
 
-    private static Collection<Integer> data;
+    private static Collection<Integer> data = new ArrayList<>();
 
     public static void main(String[] args) {
         data = new ArrayList<>();
@@ -68,7 +68,7 @@ public class CollectionsSort {
         long start = System.nanoTime();
         collSort(data1);
         long a1 = System.nanoTime() - start;
-        //  System.out.println(a1);
+          System.out.println(a1);
         start = System.nanoTime();
         minSort(data2);
         long a2 = System.nanoTime() - start;

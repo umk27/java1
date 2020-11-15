@@ -5,8 +5,9 @@ import java.math.BigInteger;
 
 public class BigAlgebra {
     public static void main(String[] args) {
-        System.out.println(fibonacci(48));
-
+        for (int i=1; i<=20; i++) {
+            System.out.println(fibonacci(i));
+        }
 
     }
 
