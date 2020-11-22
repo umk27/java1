@@ -15,23 +15,23 @@ public class FiboMapCache {
         //     test();
     }
 
-    private Map<Integer, BigDecimal> fiboCache = new HashMap<>();
+    private static Map<Integer, BigDecimal> fiboCache = new HashMap<>();
     private boolean cache;
 
     public FiboMapCache(boolean cacheOn) {
         if (cacheOn) {
-            this.setfiboCache();
+            setfiboCache();
         }
         this.cache = cacheOn;
 
     }
 
-    public void setfiboCache() {
+    public static void setfiboCache() {
         for (int j = 1; j <= 1000; j++) {
             BigDecimal a = new BigDecimal("1");
             BigDecimal b = new BigDecimal("1");
             if (j == 1 || j == 2) {
-                this.fiboCache.put(j, BigDecimal.ONE);
+                fiboCache.put(j, BigDecimal.ONE);
 
 
             }
@@ -42,7 +42,7 @@ public class FiboMapCache {
                     a = b;
                     b = c;
                 }
-                this.fiboCache.put(j, c);
+                fiboCache.put(j, c);
 
             }
 
