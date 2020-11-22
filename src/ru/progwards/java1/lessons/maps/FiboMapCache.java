@@ -8,11 +8,11 @@ import java.util.Map;
 public class FiboMapCache {
 
     public static void main(String[] args) {
-        //    FiboMapCache fiboMapCache = new FiboMapCache(false);
-        //      for (int i = 1; i <= 20; i++) {
-        //        System.out.println(fiboMapCache.fiboNumber(i));
-        //    }
-        test();
+            FiboMapCache fiboMapCache = new FiboMapCache(false);
+             for (int i = 1; i <= 20; i++) {
+               System.out.println(fiboMapCache.fiboNumber(i));
+            }
+      //  test();
     }
 
     private Map<Integer, BigDecimal> fiboCache = new HashMap<>();
