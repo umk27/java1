@@ -10,7 +10,7 @@ public class Profiler {
     public static void main(String[] args) {
         enterSection("Process1");
         // exitSection("Process1");
-        //  enterSection("Process1");
+        // enterSection("Process1");
         exitSection("Process1");
         List<StatisticInfo> l = getStatisticInfo();
         System.out.println(l);
@@ -27,12 +27,12 @@ public class Profiler {
 
     public static void enterSection(String name) {
         Instant i = Instant.now();
-        names.add(name);
         if (enter.containsKey(name)) {
             ArrayList<Instant> a = enter.get(name);
             a.add(i);
             enter.put(name, a);
         } else {
+            names.add(name);
             ArrayList<Instant> a = new ArrayList<>();
             a.add(i);
             enter.put(name, a);
@@ -59,7 +59,7 @@ public class Profiler {
             statisticInfo.sectionName = names.get(i);
             ArrayList<Instant> i1 = enter.get(names.get(i));
             ArrayList<Instant> i2 = exit.get(names.get(i));
-            statisticInfo.count = i1.size() - 1;
+            statisticInfo.count = i1.size();
             statisticInfo.fullTime = 0;
             for (int j = 0; j < i1.size(); j++) {
                 long a = Duration.between(i1.get(j), i2.get(j)).toMillis();
