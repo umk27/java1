@@ -9,8 +9,10 @@ public class Profiler {
 
     public static void main(String[] args) {
         enterSection("Process1");
-        // exitSection("Process1");
-        // enterSection("Process1");
+        exitSection("Process1");
+        enterSection("Process1");
+        exitSection("Process1");
+        enterSection("Process1");
         exitSection("Process1");
         List<StatisticInfo> l = getStatisticInfo();
         System.out.println(l);
@@ -63,7 +65,7 @@ public class Profiler {
             statisticInfo.fullTime = 0;
             for (int j = 0; j < i1.size(); j++) {
                 long a = Duration.between(i1.get(j), i2.get(j)).toMillis();
-                statisticInfo.fullTime = (int) (statisticInfo.count + a);
+                statisticInfo.fullTime = (int) (statisticInfo.fullTime + a);
                 statisticInfo.selfTime = statisticInfo.fullTime;
                 for (int v = 0; v < names.size(); v++) {
                     ArrayList<Instant> i11 = enter.get(names.get(v));
