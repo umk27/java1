@@ -8,6 +8,16 @@ import java.util.*;
 public class Profiler {
 
     public static void main(String[] args) {
+        enterSection("Process1");
+        // exitSection("Process1");
+        //  enterSection("Process1");
+        exitSection("Process1");
+        List<StatisticInfo> l = getStatisticInfo();
+        System.out.println(l);
+        System.out.println(l.get(0).count);
+        System.out.println(l.get(0).fullTime);
+        System.out.println(l.get(0).selfTime);
+        System.out.println(l.get(0).sectionName);
 
     }
 
@@ -17,7 +27,7 @@ public class Profiler {
 
     public static void enterSection(String name) {
         Instant i = Instant.now();
-
+        names.add(name);
         if (enter.containsKey(name)) {
             ArrayList<Instant> a = enter.get(name);
             a.add(i);
@@ -51,7 +61,7 @@ public class Profiler {
             ArrayList<Instant> i2 = exit.get(names.get(i));
             statisticInfo.count = i1.size() - 1;
             statisticInfo.fullTime = 0;
-            for (int j = 0; j < i1.size(); i++) {
+            for (int j = 0; j < i1.size(); j++) {
                 long a = Duration.between(i1.get(j), i2.get(j)).toMillis();
                 statisticInfo.fullTime = (int) (statisticInfo.count + a);
                 statisticInfo.selfTime = statisticInfo.fullTime;
