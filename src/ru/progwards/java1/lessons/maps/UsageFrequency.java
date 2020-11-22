@@ -55,7 +55,7 @@ public class UsageFrequency {
         for (int i = 0; i < z.length; i++) {
             char[] c = z[i].toCharArray();
             for (int j = 0; j < c.length; j++) {
-                if (Character.isAlphabetic(c[j])) {
+                if (Character.isAlphabetic(c[j]) || Character.isDigit(c[j])) {
                     w = w + c[j];
                 }
             }

@@ -1,6 +1,5 @@
 package ru.progwards.java1.lessons.datetime;
 
-import ru.progwards.java1.lessons.maps.SalesInfo;
 
 import java.time.Duration;
 import java.time.Instant;
