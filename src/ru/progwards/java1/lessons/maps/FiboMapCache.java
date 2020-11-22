@@ -8,7 +8,7 @@ import java.util.Map;
 public class FiboMapCache {
 
     public static void main(String[] args) {
-        FiboMapCache fiboMapCache = new FiboMapCache(true);
+        FiboMapCache fiboMapCache = new FiboMapCache(false);
         for (int i = 1; i <= 20; i++) {
             System.out.println(fiboMapCache.fiboNumber(i));
         }
@@ -16,7 +16,6 @@ public class FiboMapCache {
     }
 
     private Map<Integer, BigDecimal> fiboCache = new HashMap<>();
-    private static Map<Integer, BigDecimal> staticfiboCache = new HashMap<>();
     private boolean cache;
 
     public FiboMapCache(boolean cacheOn) {
@@ -57,9 +56,9 @@ public class FiboMapCache {
         BigDecimal a = new BigDecimal("1");
         BigDecimal b = new BigDecimal("1");
         if (n == 1 || n == 2) {
-            if (!fiboCache.containsKey(n)) {
-                fiboCache.put(n, BigDecimal.ONE);
-            }
+          //  if (!fiboCache.containsKey(n)) {
+           //     fiboCache.put(n, BigDecimal.ONE);
+         //   }
             return BigDecimal.ONE;
         }
         BigDecimal c = new BigDecimal("1");
@@ -68,9 +67,9 @@ public class FiboMapCache {
             a = b;
             b = c;
         }
-        if (!fiboCache.containsKey(n)) {
-            fiboCache.put(n, c);
-        }
+     //   if (!fiboCache.containsKey(n)) {
+      //      fiboCache.put(n, c);
+      //  }
         return c;
     }
 
