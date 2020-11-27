@@ -19,9 +19,9 @@ public class FiboMapCache {
     private boolean cache;
 
     public FiboMapCache(boolean cacheOn) {
-        if (cacheOn) {
-            setfiboCache();
-        }
+       // if (cacheOn) {
+       //     setfiboCache();
+      //  }
         this.cache = cacheOn;
 
     }
@@ -56,9 +56,9 @@ public class FiboMapCache {
         BigDecimal a = new BigDecimal("1");
         BigDecimal b = new BigDecimal("1");
         if (n == 1 || n == 2) {
-          //  if (!fiboCache.containsKey(n)) {
-           //     fiboCache.put(n, BigDecimal.ONE);
-         //   }
+            if (!fiboCache.containsKey(n)) {
+                fiboCache.put(n, BigDecimal.ONE);
+           }
             return BigDecimal.ONE;
         }
         BigDecimal c = new BigDecimal("1");
@@ -67,9 +67,9 @@ public class FiboMapCache {
             a = b;
             b = c;
         }
-     //   if (!fiboCache.containsKey(n)) {
-      //      fiboCache.put(n, c);
-      //  }
+       if (!fiboCache.containsKey(n)) {
+            fiboCache.put(n, c);
+       }
         return c;
     }
 
