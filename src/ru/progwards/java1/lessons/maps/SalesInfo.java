@@ -11,7 +11,7 @@ public class SalesInfo {
         SalesInfo salesInfo = new SalesInfo();
         System.out.println(salesInfo.loadOrders("W2.txt"));
         HashMap<String, AbstractMap.SimpleEntry<Double, Integer>> m = (HashMap<String, AbstractMap.SimpleEntry<Double, Integer>>) salesInfo.getCustomers();
-        System.out.println(m);
+        // System.out.println(m);
         //System.out.println(salesInfo.getGoods());
 
 
@@ -62,50 +62,65 @@ public class SalesInfo {
     }
 
     public Map<String, AbstractMap.SimpleEntry<Double, Integer>> getCustomers() {
-        double a = 0;
-        int b = 0;
-        String w = "";
-        char x;
+        int v = 0;
+        int a = 0;
+        double b = 0;
+        String z1[];
+        char g;
+        int x = 0;
         LinkedHashMap<String, AbstractMap.SimpleEntry<Double, Integer>> result = new LinkedHashMap<>();
-        List<String> list = new ArrayList();
-        HashMap<Integer, String[]> map1 = new HashMap<>();
-        map1.putAll(map);
-        Collections.copy((List)map1, (List)map);
-        HashMap<String, String> map2 = new HashMap<>();
-        for (int i = 1; i <= map1.size(); i++) {
-            String[] s1 = map1.get(i);
-            w = s1[0];
-            char[] c1 = s1[0].toCharArray();
-            x = c1[0];
-            for (int j = 2; j <= map1.size(); j++) {
-                String[] s2 = map1.get(j);
-                char[] c2 = s2[0].toCharArray();
-                if ((int) c2[0] < (int) x) {
-                    w = s2[0];
-                    x = c2[0];
-                    map1.put(i, s2);
-                    map1.put(j, s1);
+        HashMap<Integer, String[]> map2 = new HashMap<>();
+        HashSet<String> set = new HashSet<>();
+
+        for (int i = 1; i <= map.size(); i++) {
+            String[] s = map.get(i);
+            a = Integer.valueOf(s[2]);
+            b = Double.valueOf(s[3]);
+            for (int j = i + 1; j <= map.size(); j++) {
+                String[] z = map.get(j);
+                if (s[0].equals(z[0])) {
+                    a = a + Integer.valueOf(z[2]);
+                    b = b + Double.valueOf(z[3]);
                 }
 
             }
-            if (!list.contains(w)) {
-                list.add(w);
+            String[] q = new String[3];
+            q[0] = String.valueOf(s[0]);
+            q[1] = String.valueOf(b);
+            q[2] = String.valueOf(a);
+
+            if (!set.contains(s[0])) {
+                x++;
+                map2.put(x, q);
             }
+            set.add(s[0]);
         }
 
-        for (int i = 0; i < list.size(); i++) {
-            for (int j = 1; j <= map.size(); j++) {
-                String[] s1 = map.get(i);
-                if (s1[0].equals(list.get(i))) {
-                    a = a + Double.valueOf(s1[3]);
-                    b = b + Integer.valueOf(s1[2]);
-
+        for (int i = 1; i <= map2.size(); i++) {
+            v = 0;
+            int i1 = i;
+            String[] z = new String[3];
+            String[] s = map2.get(i);
+            z1 = s;
+            char[] c = s[0].toCharArray();
+            g = c[0];
+            for (int j = i + 1; j <= map2.size(); j++) {
+                z = map2.get(j);
+                char[] w = z[0].toCharArray();
+                if ((int) w[0] < g) {
+                    g = w[0];
+                    v = j;
+                    z1 = z;
                 }
 
             }
-            a = 0;
-            b = 0;
-            result.put(list.get(i), new AbstractMap.SimpleEntry<>(a, b));
+            if (v != 0) {
+                map2.put(i, z1);
+                map2.put(v, s);
+            }
+            double r = Double.valueOf(z1[1]);
+            int t = Integer.valueOf(z1[2]);
+            result.put(z1[0], new AbstractMap.SimpleEntry<Double, Integer>(r, t));
         }
 
         return result;
