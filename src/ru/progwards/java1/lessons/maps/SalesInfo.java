@@ -1,5 +1,7 @@
 package ru.progwards.java1.lessons.maps;
 
+import org.w3c.dom.ls.LSOutput;
+
 import javax.swing.*;
 import java.io.FileReader;
 import java.io.IOException;
@@ -8,9 +10,9 @@ import java.util.*;
 public class SalesInfo {
 
     public static void main(String[] args) {
-        SalesInfo salesInfo = new SalesInfo();
-        System.out.println(salesInfo.loadOrders("W2.txt"));
-        HashMap<String, AbstractMap.SimpleEntry<Double, Integer>> m = (HashMap<String, AbstractMap.SimpleEntry<Double, Integer>>) salesInfo.getCustomers();
+        //  SalesInfo salesInfo = new SalesInfo();
+        //  System.out.println(salesInfo.loadOrders("W2.txt"));
+        //  HashMap<String, AbstractMap.SimpleEntry<Double, Integer>> m = (HashMap<String, AbstractMap.SimpleEntry<Double, Integer>>) salesInfo.getCustomers();
         // System.out.println(m);
         //System.out.println(salesInfo.getGoods());
 
@@ -20,6 +22,10 @@ public class SalesInfo {
     static HashMap<Integer, String[]> map = new HashMap<>();
 
     public int loadOrders(String fileName) {
+        Integer i1 = null;
+        Double d = null;
+        boolean b1 = true;
+        boolean b2 = true;
         int n = 0;
         try (FileReader reader = new FileReader(fileName)) {
             Scanner scanner = new Scanner(reader);
@@ -29,12 +35,32 @@ public class SalesInfo {
                 for (int i = 0; i < s.length; i++) {
                     s[i] = s[i].trim();
                 }
-                Integer i = Integer.valueOf(s[2]);
-                Double d = Double.valueOf(s[3]);
-                if (s.length == 4 && i != null && d != null) {
+                char[] c = s[2].toCharArray();
+                for (int i = 0; i < c.length; i++) {
+                    if (!Character.isDigit(c[i])) {
+                        b1 = false;
+                    }
+                }
+                if (b1) {
+                    i1 = Integer.valueOf(s[2]);
+                }
+                String z = s[3];
+                z.replace(".", "");
+                char[] q = z.toCharArray();
+                for (int i = 0; i < c.length; i++) {
+                    if (!Character.isDigit(q[i])) {
+                        b2 = false;
+                    }
+                }
+                if (!b2) {
+                    d = Double.valueOf(s[3]);
+                }
+                if (s.length == 4 && i1 != null && d != null) {
                     n = n + 1;
                     map.put(n, s);
                 }
+                i1 = null;
+                d = null;
             }
         } catch (IOException E) {
 

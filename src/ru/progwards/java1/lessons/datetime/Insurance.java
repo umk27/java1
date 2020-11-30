@@ -55,24 +55,27 @@ public class Insurance {
     public void setDuration(String strDuration, FormatStyle style) {
         switch (style) {
             case SHORT:
-                this.duration = Duration.ofMillis(Long.parseLong(strDuration));
+                duration = Duration.ofMillis(Long.parseLong(strDuration));
                 break;
             case LONG:
-                LocalDateTime ltd = LocalDateTime.from(DateTimeFormatter.ISO_LOCAL_DATE_TIME.parse("0000-00-00T00:00:00"));
-                ZonedDateTime zdtt = ZonedDateTime.of(ltd, ZoneId.systemDefault());
-                DateTimeFormatter dtf = DateTimeFormatter.ISO_ZONED_DATE_TIME;
-                ZonedDateTime zdt = ZonedDateTime.parse(strDuration, dtf);
-                this.duration = Duration.between(zdtt, zdt);
+                LocalDateTime ltd = LocalDateTime.parse(strDuration, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+                ZonedDateTime zdt = start.plusYears(ltd.getYear()).
+                        plusMonths(ltd.getMonthValue()).
+                        plusDays(ltd.getDayOfMonth()).
+                        plusHours(ltd.getHour()).
+                        plusMinutes(ltd.getMinute()).
+                        plusSeconds(ltd.getSecond());
+                duration = Duration.between(start, zdt);
                 break;
             case FULL:
-                this.duration = Duration.parse(strDuration);
+                duration = Duration.parse(strDuration);
                 break;
         }
     }
 
     public boolean checkValid(ZonedDateTime dateTime) {
         if (dateTime == null) return true;
-        if (Duration.between(start, dateTime).toMinutes() < this.duration.toMinutes()) {
+        if (Duration.between(start, dateTime).toMinutes() < duration.toMinutes()) {
             return true;
         } else {
             return false;
