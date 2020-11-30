@@ -10,8 +10,8 @@ import java.util.*;
 public class SalesInfo {
 
     public static void main(String[] args) {
-        //  SalesInfo salesInfo = new SalesInfo();
-        //  System.out.println(salesInfo.loadOrders("W2.txt"));
+          SalesInfo salesInfo = new SalesInfo();
+          System.out.println(salesInfo.loadOrders("W2.txt"));
         //  HashMap<String, AbstractMap.SimpleEntry<Double, Integer>> m = (HashMap<String, AbstractMap.SimpleEntry<Double, Integer>>) salesInfo.getCustomers();
         // System.out.println(m);
         //System.out.println(salesInfo.getGoods());
@@ -47,12 +47,12 @@ public class SalesInfo {
                 String z = s[3];
                 z.replace(".", "");
                 char[] q = z.toCharArray();
-                for (int i = 0; i < c.length; i++) {
+                for (int i = 0; i < q.length; i++) {
                     if (!Character.isDigit(q[i])) {
                         b2 = false;
                     }
                 }
-                if (!b2) {
+                if (b2) {
                     d = Double.valueOf(s[3]);
                 }
                 if (s.length == 4 && i1 != null && d != null) {
