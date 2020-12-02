@@ -74,7 +74,7 @@ public class SalesInfo {
     }
 
     public Map<String, Double> getGoods() {
-        LinkedHashMap<String, Double> result = new LinkedHashMap<>();
+        HashMap<String, Double> result = new HashMap<>();
         double a = 0;
         String[] s;
         String[] z;
@@ -91,6 +91,7 @@ public class SalesInfo {
                 result.put(s[1], a);
             }
         }
+
         return result;
     }
 
