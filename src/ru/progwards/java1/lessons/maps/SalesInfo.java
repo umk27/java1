@@ -35,36 +35,38 @@ public class SalesInfo {
                 for (int i = 0; i < s.length; i++) {
                     s[i] = s[i].trim();
                 }
-                char[] c = s[2].toCharArray();
-                for (int i = 0; i < c.length; i++) {
-                    if (!Character.isDigit(c[i])) {
-                        b1 = false;
+                if (s.length >= 3) {
+                    char[] c = s[2].toCharArray();
+                    for (int i = 0; i < c.length; i++) {
+                        if (!Character.isDigit(c[i])) {
+                            b1 = false;
+                        }
                     }
-                }
-                if (b1) {
-                    i1 = Integer.valueOf(s[2]);
-                }
-                String z = s[3];
-                z.replace(".", "");
-                char[] q = z.toCharArray();
-                for (int i = 0; i < q.length; i++) {
-                    if (!Character.isDigit(q[i])) {
-                        b2 = false;
+                    if (b1) {
+                        i1 = Integer.valueOf(s[2]);
                     }
+                    String z = s[3];
+                    z.replace(".", "");
+                    char[] q = z.toCharArray();
+                    for (int i = 0; i < q.length; i++) {
+                        if (!Character.isDigit(q[i])) {
+                            b2 = false;
+                        }
+                    }
+                    if (b2) {
+                        d = Double.valueOf(s[3]);
+                    }
+                    if (s.length == 4 && i1 != null && d != null) {
+                        n = n + 1;
+                        map.put(n, s);
+                    }
+                    i1 = null;
+                    d = null;
+                    b1 = true;
+                    b2 = true;
                 }
-                if (b2) {
-                    d = Double.valueOf(s[3]);
-                }
-                if (s.length == 4 && i1 != null && d != null) {
-                    n = n + 1;
-                    map.put(n, s);
-                }
-                i1 = null;
-                d = null;
-                b1 = true;
-                b2 = true;
             }
-        } catch (IOException E) {
+        } catch (IOException e) {
 
         }
         return n;
