@@ -11,7 +11,8 @@ public class SalesInfo {
 
     public static void main(String[] args) {
         SalesInfo salesInfo = new SalesInfo();
-        System.out.println(salesInfo.loadOrders("W2.txt"));
+        salesInfo.loadOrders("W2.txt");
+        salesInfo.getGoods();
         //  HashMap<String, AbstractMap.SimpleEntry<Double, Integer>> m = (HashMap<String, AbstractMap.SimpleEntry<Double, Integer>>) salesInfo.getCustomers();
         // System.out.println(m);
         //System.out.println(salesInfo.getGoods());
@@ -75,21 +76,22 @@ public class SalesInfo {
     public Map<String, Double> getGoods() {
         LinkedHashMap<String, Double> result = new LinkedHashMap<>();
         double a = 0;
+        String[] s = new String[4];
         for (int i = 1; i <= map.size(); i++) {
-            String[] s = map.get(i);
+            s = map.get(i);
             a = Double.valueOf(s[3]);
-            for (int j = 1; j <= map.size(); j++) {
-                String[] z = map.get(j);
-                if (s[1].equals(z[1])) {
-                    a = a + Double.valueOf(z[3]);
-                }
-            }
             if (!result.containsKey(s[1])) {
                 result.put(s[1], a);
             }
+            //   for (int j = 1; j <= map.size(); j++) {
+            //      String[] z = map.get(j);
+            //      if (s[1].equals(z[1])) {
+            //          a = a + Double.valueOf(z[3]);
+            //      }
         }
         return result;
     }
+
 
     public Map<String, AbstractMap.SimpleEntry<Double, Integer>> getCustomers() {
         int v = 0;
