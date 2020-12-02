@@ -76,18 +76,20 @@ public class SalesInfo {
     public Map<String, Double> getGoods() {
         LinkedHashMap<String, Double> result = new LinkedHashMap<>();
         double a = 0;
-        String[] s = new String[4];
+        String[] s;
+        String[] z;
         for (int i = 1; i <= map.size(); i++) {
             s = map.get(i);
-            a = Double.valueOf(s[3]);
+            a = Integer.valueOf(s[2]) * Double.valueOf(s[3]);
+            for (int j = i + 1; j <= map.size(); j++) {
+                z = map.get(j);
+                if (s[1].equals(z[1])) {
+                    a = a + Integer.valueOf(z[2]) * Double.valueOf(z[3]);
+                }
+            }
             if (!result.containsKey(s[1])) {
                 result.put(s[1], a);
             }
-            //   for (int j = 1; j <= map.size(); j++) {
-            //      String[] z = map.get(j);
-            //      if (s[1].equals(z[1])) {
-            //          a = a + Double.valueOf(z[3]);
-            //      }
         }
         return result;
     }
