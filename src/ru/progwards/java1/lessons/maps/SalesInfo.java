@@ -10,8 +10,8 @@ import java.util.*;
 public class SalesInfo {
 
     public static void main(String[] args) {
-          SalesInfo salesInfo = new SalesInfo();
-          System.out.println(salesInfo.loadOrders("W2.txt"));
+        SalesInfo salesInfo = new SalesInfo();
+        System.out.println(salesInfo.loadOrders("W2.txt"));
         //  HashMap<String, AbstractMap.SimpleEntry<Double, Integer>> m = (HashMap<String, AbstractMap.SimpleEntry<Double, Integer>>) salesInfo.getCustomers();
         // System.out.println(m);
         //System.out.println(salesInfo.getGoods());
@@ -61,6 +61,8 @@ public class SalesInfo {
                 }
                 i1 = null;
                 d = null;
+                b1 = true;
+                b2 = true;
             }
         } catch (IOException E) {
 
