@@ -20,7 +20,7 @@ public class SalesInfo {
 
     }
 
-    static HashMap<Integer, String[]> map = new HashMap<>();
+    HashMap<Integer, String[]> map = new HashMap<>();
 
     public int loadOrders(String fileName) {
         Integer i1 = null;
@@ -80,11 +80,11 @@ public class SalesInfo {
         String[] z;
         for (int i = 1; i <= map.size(); i++) {
             s = map.get(i);
-            a = Integer.valueOf(s[2]) * Double.valueOf(s[3]);
+            a = Double.valueOf(s[3]);
             for (int j = i + 1; j <= map.size(); j++) {
                 z = map.get(j);
                 if (s[1].equals(z[1])) {
-                    a = a + Integer.valueOf(z[2]) * Double.valueOf(z[3]);
+                    a = a + Double.valueOf(z[3]);
                 }
             }
             if (!result.containsKey(s[1])) {
