@@ -24,29 +24,6 @@ public class FiboMapCache {
 
     }
 
-    public static void setfiboCache() {
-        for (int j = 1; j <= 1000; j++) {
-            BigDecimal a = new BigDecimal("1");
-            BigDecimal b = new BigDecimal("1");
-            if (j == 1 || j == 2) {
-                fiboCache.put(j, BigDecimal.ONE);
-
-
-            }
-            BigDecimal c = new BigDecimal("1");
-            if (j != 1 && j != 2) {
-                for (int i = 2; i != j; i++) {
-                    c = a.add(b);
-                    a = b;
-                    b = c;
-                }
-                fiboCache.put(j, c);
-
-            }
-
-        }
-    }
-
     public BigDecimal fiboNumber(int n) {
         if (cache) {
             if (!fiboCache.containsKey(n)) {

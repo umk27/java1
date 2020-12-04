@@ -74,7 +74,12 @@ public class SalesInfo {
     }
 
     public Map<String, Double> getGoods() {
-        HashMap<String, Double> result = new HashMap<>();
+        HashMap<String, Double> r = new HashMap<>();
+        LinkedHashMap<String, Double> result = new LinkedHashMap<>();
+        HashMap<String, Double> map2 = new HashMap<>();
+        ArrayList<String> list = new ArrayList<>();
+        ArrayList<String> list1 = new ArrayList<>();
+
         double a = 0;
         String[] s;
         String[] z;
@@ -87,9 +92,33 @@ public class SalesInfo {
                     a = a + Double.valueOf(z[3]);
                 }
             }
-            if (!result.containsKey(s[1])) {
-                result.put(s[1], a);
+            if (!r.containsKey(s[1])) {
+                list.add(s[1]);
+                r.put(s[1], a);
             }
+        }
+
+        for (int i = 0; i < list.size(); i++) {
+            char[] c = list.get(i).toCharArray();
+            char c1 = c[0];
+            int v = i;
+            for (int j = i + 1; j < list.size(); j++) {
+                char[] h = list.get(j).toCharArray();
+                char h1 = h[0];
+                if ((int) h1 < (int) c1) {
+                    v = j;
+                    c1 = h1;
+                }
+
+            }
+            list1.add(list.get(v));
+        }
+
+        for (int i =0; i< list1.size(); i++) {
+            String s1 = list1.get(i);
+            Double d1 = r.get(list1.get(i));
+            result.put(s1, d1);
+
         }
 
         return result;
