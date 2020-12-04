@@ -78,7 +78,6 @@ public class SalesInfo {
         LinkedHashMap<String, Double> result = new LinkedHashMap<>();
         HashMap<String, Double> map2 = new HashMap<>();
         ArrayList<String> list = new ArrayList<>();
-        ArrayList<String> list1 = new ArrayList<>();
 
         double a = 0;
         String[] s;
@@ -98,25 +97,34 @@ public class SalesInfo {
             }
         }
 
+        String w = "";
+        String g = "";
+
         for (int i = 0; i < list.size(); i++) {
             char[] c = list.get(i).toCharArray();
+            w = list.get(i);
             char c1 = c[0];
-            int v = i;
+            int v = 0;
             for (int j = i + 1; j < list.size(); j++) {
                 char[] h = list.get(j).toCharArray();
                 char h1 = h[0];
                 if ((int) h1 < (int) c1) {
+                    g = list.get(j);
                     v = j;
                     c1 = h1;
                 }
-
             }
-            list1.add(list.get(v));
+            if (v != 0) {
+                list.add(i, g);
+                list.remove(i + 1);
+                list.add(v, w);
+                list.remove(v + 1);
+            }
         }
 
-        for (int i =0; i< list1.size(); i++) {
-            String s1 = list1.get(i);
-            Double d1 = r.get(list1.get(i));
+        for (int i = 0; i < list.size(); i++) {
+            String s1 = list.get(i);
+            Double d1 = r.get(list.get(i));
             result.put(s1, d1);
 
         }
