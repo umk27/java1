@@ -83,9 +83,9 @@ public class CollectionsSort {
             result.add("collSort");
             if (a2 < a1) {
                 result.add("minSort");
-                result.add("mysort");
+                result.add("mySort");
             } else {
-                result.add("mysort");
+                result.add("mySort");
                 result.add("minSort");
             }
         }
@@ -94,9 +94,9 @@ public class CollectionsSort {
             result.add("minSort");
             if (a3 < a1) {
                 result.add("collSort");
-                result.add("mysort");
+                result.add("mySort");
             } else {
-                result.add("mysort");
+                result.add("mySort");
                 result.add("collSort");
             }
         }
@@ -105,7 +105,7 @@ public class CollectionsSort {
             result.add("mySort");
             if (a2 < a1) {
                 result.add("minSort");
-                result.add("collsort");
+                result.add("collSort");
             } else {
                 result.add("collSort");
                 result.add("minSort");
