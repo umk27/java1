@@ -6,6 +6,10 @@ import java.util.Random;
 
 public class UserSession {
 
+    public static void main(String[] args) {
+        UserSession us = new UserSession("qwerty");
+    }
+
     private int sessionHandle;
     private String userName;
     private LocalDateTime lastAccess;
@@ -23,12 +27,13 @@ public class UserSession {
     }
 
     public void updateLastAccess() {
-        lastAccess = LocalDateTime.from(Instant.now());
+        lastAccess = LocalDateTime.now();
     }
 
     public UserSession(String userName) {
+        this.userName = userName;
         Random rand = new Random();
         this.sessionHandle = rand.nextInt(100);
-        this.lastAccess = LocalDateTime.from(Instant.now());
+        this.lastAccess = LocalDateTime.now();
     }
 }
