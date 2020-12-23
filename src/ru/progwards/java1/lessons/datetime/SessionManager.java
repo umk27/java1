@@ -10,18 +10,18 @@ import java.util.Collections;
 public class SessionManager {
 
     public static void main(String[] args) throws InterruptedException {
-        UserSession us = new UserSession("1");
-        UserSession us2 = new UserSession("2");
-        SessionManager sm = new SessionManager(10);
+        UserSession us = new UserSession("5");
+        //UserSession us2 = new UserSession("2");
+        SessionManager sm = new SessionManager(1);
         sm.add(us);
-        Thread.sleep((long) 0.6);
-        sm.add(us2);
-        Thread.sleep((long) 0.5);
-        sm.deleteExpired();
+        Thread.sleep(10000);
+        //   sm.add(us2);
+        //  Thread.sleep((long) 0.5);
+        //   sm.deleteExpired();
         UserSession u = sm.get(us.getSessionHandle());
-        UserSession u2 = sm.get(us2.getSessionHandle());
+        //  UserSession u2 = sm.get(us2.getSessionHandle());
         System.out.println(u.getUserName());
-        System.out.println(u2.getUserName());
+        //  System.out.println(u2.getUserName());
 
 
     }
@@ -43,7 +43,7 @@ public class SessionManager {
             LocalDateTime l = us.getLastAccess();
             Duration d = Duration.between(l, LocalDateTime.now());
             int i1 = (int) d.toSeconds();
-            if (us.getUserName().equals(userName) && i1 <= sessionValid) {
+            if (us.getUserName().equals(userName) && i1 < sessionValid) {
                 us.updateLastAccess();
                 return us;
             }
@@ -58,7 +58,8 @@ public class SessionManager {
             LocalDateTime l = us.getLastAccess();
             Duration d = Duration.between(l, LocalDateTime.now());
             int i1 = (int) d.toSeconds();
-            if (us.getSessionHandle() == sessionHandle && i1 <= sessionValid) {
+            System.out.println(i1);
+            if (us.getSessionHandle() == sessionHandle && i1 < sessionValid) {
                 us.updateLastAccess();
                 return us;
             }
