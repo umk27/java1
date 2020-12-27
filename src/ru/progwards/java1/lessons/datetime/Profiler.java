@@ -9,17 +9,28 @@ public class Profiler {
 
     public static void main(String[] args) {
         enterSection("Process1");
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+        }
+        enterSection("Process2");
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+        }
+        exitSection("Process2");
+        enterSection("Process2");
+        try {
+            Thread.sleep(200);
+        } catch (InterruptedException e) {
+        }
+        exitSection("Process2");
         exitSection("Process1");
-        enterSection("Process1");
-        exitSection("Process1");
-        enterSection("Process1");
-        exitSection("Process1");
-        List<StatisticInfo> l = getStatisticInfo();
-        System.out.println(l);
-        System.out.println(l.get(0).count);
-        System.out.println(l.get(0).fullTime);
-        System.out.println(l.get(0).selfTime);
-        System.out.println(l.get(0).sectionName);
+        String info = "";
+        for (StatisticInfo si : getStatisticInfo()) {
+            info += si.sectionName + " " + (si.fullTime / 100 * 100) + " " + (si.selfTime / 100 * 100) + " " + si.count + "\n";
+        }
+        System.out.println(info);
 
     }
 
@@ -67,12 +78,16 @@ public class Profiler {
                 long a = Duration.between(i1.get(j), i2.get(j)).toMillis();
                 statisticInfo.fullTime = (int) (statisticInfo.fullTime + a);
                 statisticInfo.selfTime = statisticInfo.fullTime;
-                for (int v = 0; v < names.size(); v++) {
+                for (int v = i + 1; v < names.size(); v++) {
                     ArrayList<Instant> i11 = enter.get(names.get(v));
                     ArrayList<Instant> i22 = exit.get(names.get(v));
                     for (int x = 0; x < i11.size(); x++) {
-                        if (i1.get(j).toEpochMilli() < i11.get(x).toEpochMilli() && i22.get(x).toEpochMilli() < i2.get(j).toEpochMilli()) {
-                            long b = Duration.between(i11.get(j), i22.get(j)).toMillis();
+                      //  long q1 = i1.get(j).toEpochMilli();
+                      //  long q11 = i11.get(x).toEpochMilli();
+                      //  long w1 = i22.get(x).toEpochMilli();
+                      //  long w11 = i2.get(j).toEpochMilli();
+                        if (i1.get(j).toEpochMilli() <= i11.get(x).toEpochMilli() && i22.get(x).toEpochMilli() <= i2.get(j).toEpochMilli()) {
+                            long b = Duration.between(i11.get(x), i22.get(x)).toMillis();
                             statisticInfo.selfTime = (int) (statisticInfo.selfTime - b);
                         }
                     }

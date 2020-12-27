@@ -52,6 +52,11 @@ public class Insurance {
         this.duration = Duration.between(start, expiration);
     }
 
+    public void setDuration(int months, int days, int hours) {
+        ZonedDateTime zdt = start.plusMonths(months).plusDays(days).plusHours(hours);
+        duration = Duration.between(start, zdt);
+    }
+
     public void setDuration(String strDuration, FormatStyle style) {
         switch (style) {
             case SHORT:
