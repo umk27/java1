@@ -1,22 +1,21 @@
-package ru.progwards.java1.lessons.arrays;
+package ru.progwards.java2.lessons.generics;
 
 import java.util.Arrays;
 
 public class ArraySort {
-
     public static void main(String[] args) {
-        ArraySort arraySort = new ArraySort();
-        int[] a = {4, 10, 1, 7, 9, 5, 3, 8};
-        arraySort.sort(a);
-
+        String[] c = {"c", "a", "b"};
+        Integer[] a = {4, 10, 1, 7, 9, 5, 3, 8};
+        sort(c);
     }
 
-    public void sort(int[] a) {
+
+    public static <T extends Comparable> void sort(T[] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = i + 1; j < a.length; j++) {
 
-                if (a[i] > a[j]) {
-                    int b = a[i];
+                if (a[i].compareTo(a[j]) > 0) {
+                    T b = a[i];
                     a[i] = a[j];
                     a[j] = b;
                 }

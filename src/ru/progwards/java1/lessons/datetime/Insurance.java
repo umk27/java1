@@ -11,7 +11,14 @@ public class Insurance {
 
     public static void main(String[] args) {
         Insurance insurance = new Insurance("2020-02-16T19:49:38.3652724+03:00[Europe/Moscow]", FormatStyle.FULL);
+        DateTimeFormatter dtf1 = DateTimeFormatter.ISO_ZONED_DATE_TIME;
+        ZonedDateTime z2 = ZonedDateTime.parse("2021-01-01T19:49:38.3652724+03:00[Europe/Moscow]",dtf1);
+        insurance.setDuration(z2);
         System.out.println(insurance.start);
+        DateTimeFormatter dtf2 = DateTimeFormatter.ISO_ZONED_DATE_TIME;
+        ZonedDateTime z1 = ZonedDateTime.parse("2020-12-28T19:49:38.3652724+03:00[Europe/Moscow]",dtf2);
+        insurance.checkValid(z1);
+
 
     }
 
