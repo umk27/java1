@@ -2,7 +2,6 @@ import org.junit.*;
 import org.junit.experimental.runners.Enclosed;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import ru.progwards.java2.lessons.tests.calc.SimpleCalculator;
 
 
 import java.util.Arrays;

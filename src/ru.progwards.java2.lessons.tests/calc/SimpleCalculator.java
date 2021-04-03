@@ -1,5 +1,3 @@
-package ru.progwards.java2.lessons.tests.calc;
-
 public class SimpleCalculator {
 
     public static void main(String[] args) {
