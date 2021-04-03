@@ -1,6 +1,3 @@
-package ru.progwards.java2.lessons.recursion;
-
-import java.awt.List;
 import java.util.*;
 
 public class HanoiTower {

@@ -1,5 +1,3 @@
-package ru.progwards.java2.lessons.recursion;
-
 import java.time.Instant;
 
 public class Goods {

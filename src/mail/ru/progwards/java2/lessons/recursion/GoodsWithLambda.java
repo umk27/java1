@@ -1,15 +1,9 @@
-package ru.progwards.java2.lessons.recursion;
-
-
 import java.time.Duration;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Optional;
 import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
 
 public class GoodsWithLambda {
     public static void main(String[] args) {
