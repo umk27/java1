@@ -7,11 +7,11 @@
       <sourceFolder url="file://$MODULE_DIR$/ru.progwards.java2.lessons.tests/test.calc" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/ru.progwards.java2.lessons.tests" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test1" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/mail" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/ru.progwards.java2.lessons.tests.test.calc" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/ru.progwards.java2.lessons.tests/calc" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/ru.progwards.java2.lessons.tests/test.calc" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/ru.progwards.java2.lessons.tests/calc" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/main" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
