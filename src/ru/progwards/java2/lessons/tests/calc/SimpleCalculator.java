@@ -15,7 +15,7 @@ public class SimpleCalculator {
         return (int) res;
     }
 
-    public int diff(int val1, int val2) {
+    public int diff(int val1, int val2) throws ArithmeticException {
         long res = (long) val1 - val2;
         if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) {
             throw new ArithmeticException("Произошло переполнение на операции diff");
@@ -23,7 +23,7 @@ public class SimpleCalculator {
         return (int) res;
     }
 
-    public int mult(int val1, int val2) {
+    public int mult(int val1, int val2) throws ArithmeticException {
         long res = (long) val1 * val2;
         if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE) {
             throw new ArithmeticException("Произошло переполнение на операции mult");
@@ -31,11 +31,11 @@ public class SimpleCalculator {
         return (int) res;
     }
 
-    public int div(int val1, int val2) {
+    public int div(int val1, int val2) throws NullPointerException {
         if (val2 == 0) {
             throw new NullPointerException("Деление на 0 на операции div");
         }
-        return  val1 / val2;
+        return val1 / val2;
 
     }
 
