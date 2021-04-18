@@ -40,18 +40,35 @@ public class DoubleHashTable<K, V> implements Iterable<V> {
         }
 
         public boolean hasNext() {
+            if (i1 == 0) {
+                for (int i2 = i1; i2 < table.length; i2++) {
+                    if (table[i2] != null) {
+                        i1 = i2;
+                        break;
+                    }
+                }
+            }
             boolean b = false;
-            for (int i2 = i1; i2 < table.length; i2++) {
+            for (int i2 = i1 + 1; i2 < table.length; i2++) {
                 if (table[i2] != null) {
                     b = true;
                     break;
                 }
             }
+
             return b;
         }
 
 
         public V next() {
+            if (i1 == 0) {
+                for (int i2 = i1; i2 < table.length; i2++) {
+                    if (table[i2] != null) {
+                        i1 = i2;
+                        break;
+                    }
+                }
+            }
             V W = null;
             for (int i2 = i1 + 1; i2 < table.length; i2++) {
                 if (table[i2] != null) {

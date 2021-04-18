@@ -11,16 +11,19 @@ public class BiDirList<T> implements Iterable<T> {
         Integer[] in = {7, 8};
         BiDirList<Integer> list1 = BiDirList.of(a);
 
-        int i = 0;
-        for (Iterator<Integer> iterator = list1.iterator(); iterator.hasNext(); ) {
-            i = i + 1;
-            if (i % 2 == 0) {
-                iterator.remove();
-            }
-            System.out.println(iterator.next());
-        }
+        // int i = 0;
+        //  for (Iterator<Integer> iterator = list1.iterator(); iterator.hasNext(); ) {
+        //     i = i + 1;
+        //     if (i % 2 == 0) {
+        //         iterator.remove();
+        //     }
+        //      System.out.println(iterator.next());
+        //  }
 
+        System.out.println(list1.at(4));
+        System.out.println(list1.size());
         System.out.println(Arrays.toString(list1.toArray(in)));
+
         //   BiDirList<Integer>.ListItem<Integer> current = list1.getHead();
         //     while (current != null) {
         //        System.out.println(current.getItem());
@@ -147,7 +150,7 @@ public class BiDirList<T> implements Iterable<T> {
         return z;
     }
 
-    T getItem(int i) {
+    public T at(int i) {
         ListItem<T> z = null;
         ListItem<T> x = head;
         while (x != null) {
@@ -158,6 +161,10 @@ public class BiDirList<T> implements Iterable<T> {
             }
         }
         return z.getItem();
+    }
+
+    public int size() {
+        return size;
     }
 
     public void addFirst(T item) {
@@ -171,25 +178,25 @@ public class BiDirList<T> implements Iterable<T> {
         } else {
             i1 = i1 + 1;
             li.setI(i1);
-            size = i1 + 1;
+            size = size + 1;
             li.setPrefer(tail);
             tail.setNext(li);
             tail = li;
         }
     }
 
-    void addPrefer(T item) {
+    public void addLast(T item) {
         li = new ListItem<>(item);
         if (head == null) {
             i1 = 0;
             li.setI(i1);
-            size = i1 + 1;
             size = 1;
             head = li;
             tail = li;
         } else {
             i1 = i1 + 1;
             li.setI(i1);
+            size = size + 1;
             li.setNext(head);
             head.setPrefer(li);
             head = li;

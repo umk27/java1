@@ -1,4 +1,4 @@
-package ru.progwards.java2.lessons.tests.test.calc;
+package calc;
 
 import org.junit.*;
 import org.junit.experimental.runners.Enclosed;
